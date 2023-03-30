@@ -27,3 +27,5 @@ Route::get('register',[Authcontroller::class,'register_view'])->name('register')
 Route::post('register',[Authcontroller::class,'register'])->name('register');
 
 Route::get('home',[AuthController::class,'home'])->name('home');
+
+Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao.index');
