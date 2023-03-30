@@ -16,10 +16,13 @@ return new class extends Migration
         Schema::create('cardapios', function (Blueprint $table) {
             $table->id();
             $table->string('dia_semana');
-            $table->text('descricao');
-            $table->number('valor_calorico');
+            $table->string('refeicao_principal');
+            $table->string('sobremesa');
+            $table->string('bebida');
+            $table->text('valor_calorico');
+            
             $table->timestamps();
-        })
+        });
     }
 
     /**
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cardapios');
     }
 };
