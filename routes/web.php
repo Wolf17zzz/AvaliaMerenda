@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EscolaController;
 
+use App\Http\Controllers\CardapiosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

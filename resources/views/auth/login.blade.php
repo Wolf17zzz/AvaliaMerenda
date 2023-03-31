@@ -4,9 +4,10 @@
     
 
     <div class="container">
-        <div class="row">
+        <div class="row"></div>
 
-            <div class="col-md-4 offset-md-4">
+        
+            <div class="col-md-3 offset-md-4">
                 <div class="card form-holder">
                     <div class="card-body">
                         <h1>Login</h1>
@@ -38,10 +39,10 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-8 text-left">
+                                <div class="col-5 text-left">
                                     <a href="#" class="btn btn-link">Esqueceu a senha?</a>
                                 </div>
-                                <div class="col-4 text-rigth">
+                                <div class="col-7 text-rigth">
                                     <input type="submit" class="btn btn-primary" value=" Cadastrar ">
                                 </div>
                             </div>
