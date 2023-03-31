@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('endereco');
-            $table->integer('cnpj');
+            $table->string('cnpj');
+
             
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

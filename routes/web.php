@@ -51,6 +51,12 @@ Route::get('home',[AuthController::class,'home'])->name('home');
 
 Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao.index');
 
+    //rotas escola
 
 Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escolas.create');
 Route::post('/escolas',[EscolaController::class,'store'])->name('escola.store');
+Route::get('/escolas/{escola}', [EscolaController::class, 'show'])->name('escola.show');
+Route::get('/escolas/{escola}/editar', [EscolaController::class, 'edit'])->name('escola.edit');
+Route::post('/escolas/{escola}', [EscolaController::class, 'update'])->name('escola.update');
+Route::get('/escola/excluir/{id}', [EscolaController::class, 'delete'])->name('escola.delete');
+Route::post('/escola/excluir/{id}', [CardapiosController::class, 'destroy'])->name('escola.destroy');
