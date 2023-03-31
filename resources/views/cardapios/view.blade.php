@@ -9,6 +9,33 @@
         <title>Cardapio #{{ $cardapio->id }}</title>
     </head>
     <body>
-    </body>
+        <div class="container">
+            <h1>Dia: {{ $cardapio->dia_semana }}</h1>
 
+            <h3>Prato do Dia: {{ $cardapio->refeicao_principal }}</h3>
+
+            <h3>Sobremesa: {{ $cardapio->sobremesa }}</h3>
+
+            <h3>Bebida: {{ $cardapio->bebida }}</h3>
+
+            <h3>Valor Calórico: {{ $cardapio->valor_calorico }}</h3>
+
+                <br>
+                <br>
+            <a  class="btn btn-primary" href="{{ route('cardapios.index') }}">Voltar para Cardapio</a>
+                <br>
+                <br>
+            <a  class="btn btn-primary" href="{{ route('cardapios.edit', $cardapio->id) }}">Editar Cardapio</a>
+                <br>
+                <br>
+            <form method="POST" action="{{ route('cardapios.destroy', $cardapio->id) }}">
+                @csrf 
+                @method('DELETE')
+                
+                <input type="submit" value="Excluir Cardapio" class="btn btn-danger">
+            </form>
+        </div>
+
+
+    </body>
 </html>

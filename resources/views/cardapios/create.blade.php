@@ -20,8 +20,28 @@
                     <input type="text" name="dia_semana" class="form-control">
                 </div>
                 
+                <div class="mb-3">
+                    <label>Prato Principal</label>
+                    <input type="text" name="refeicao_principal" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Sobremesa</label>
+                    <input type="text" name="sobremesa" class="form-control">
+                </div>
+
                 <div>
-                    
+                    <label>Bebida</label>
+                    <input type="text" name="bebida" class="form-control">
+                </div>
+
+                <div>
+                    <label>Valor Calórico</label>
+                    <input type="text" name="valor_calorico" class="form-control">
+                </div>
+
+                <div>
+                    <input type="submit" name="Salvar Cardapio" class="btn btn-primary">
                 </div>
 
             </form>

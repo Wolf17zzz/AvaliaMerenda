@@ -9,6 +9,34 @@
         <title>Cardapio da Semana</title>
     </head>
     <body>
-    </body>
+        <div class="container">
+            <h1>Cardapio da Semana</h1>
 
+            <a class="btn btn-outline-success my-2" href="{{ route('cardapios.create') }}">Novo Cardapio</a>
+
+            <table class="table table-hover table-bordered table-primary">
+                <tr class="table-dark">
+                    <th>Dia da Semana</th>
+                    <th>Prato Principal</th>
+                    <th>Sobremesa</th>
+                    <th>Bebida</th>
+                    <th>Valor Calórico</th>
+                </tr>
+
+                @foreach ($cardapios as $cardapio)
+                    <tr>
+                        <td>{{ $cardapio->dia_semana }}</td>
+                        <td>{{ $cardapio->refeicao_principal }}</td>
+                        <td>{{ $cardapio->sobremesa }}</td>
+                        <td>{{ $cardapio->bebida }}</td>
+                        <td>{{ $cardapio->valor_calorico }}</td>
+                        <td>
+                            <a class="link" href="{{ route('cardapios.show', $cardapio->id) }}">Ver</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
+
+    </body>
 </html>

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('sobremesa');
             $table->string('bebida');
             $table->text('valor_calorico');
-            
+
             $table->timestamps();
         });
     }
