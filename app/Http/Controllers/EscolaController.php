@@ -10,4 +10,8 @@ class EscolaController extends Controller
     {
         return view('escola.create');
     }
+    public function store (Request $requisicao)
+    {
+        dd($requisicao->all());
+    } 
 }

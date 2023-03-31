@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EscolaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,5 @@ Route::get('home',[AuthController::class,'home'])->name('home');
 Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao.index');
 
 
-Route::get('/escolas.novo', [EscolaController::class, 'create'])->name('escolas.create');
-
+Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escolas.create');
+Route::post('/escolas',[EscolaController::class,'store'])->name('escola.store');
