@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-
-
     <div class="container">
         <div class="row">
 
@@ -31,7 +28,7 @@
                                 <input type="text" name="endereco" class="form-control" >
                                 @if ($errors->has('endereco'))
                                     <p class="text-danger">{{ $errors->first('endereco') }}</p>
-                                @endif                                
+                                @endif
                             </div>
 
                             <div class="form-group">
@@ -51,3 +48,4 @@
             </div>
         </div>
     </div>
+@endsection

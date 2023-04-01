@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-    
+
 
     <div class="container">
         <div class="row"></div>
 
-        
+
             <div class="col-md-3 offset-md-4">
                 <div class="card form-holder">
                     <div class="card-body">
@@ -37,10 +37,12 @@
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
                                 @endif
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-5 text-left">
+                                    <a href="{{ route ('escola.create')}}" class="btn btn-link">Cadastrar nova Escola</a>
                                     <a href="#" class="btn btn-link">Esqueceu a senha?</a>
+
                                 </div>
                                 <div class="col-7 text-rigth">
                                     <input type="submit" class="btn btn-primary" value=" Cadastrar ">

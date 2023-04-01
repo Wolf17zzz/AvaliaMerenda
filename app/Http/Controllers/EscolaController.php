@@ -20,6 +20,7 @@ class EscolaController extends Controller
         $escola->cnpj = $requisicao->cnpj;
 
         $escola->save();
+        return view('escola.index');
 
     }
     public function show($id)
@@ -51,4 +52,14 @@ class EscolaController extends Controller
         $escola->delete();
         return redirect()->route('escola.index');
     }
+
+     public function index()
+{
+    // Pega todos os registos da tabela relacionada ao modelo Gato
+    $escola = Escola::all();
+
+    // Manda os dados para uma view, no caso gatos.index
+    return view('escola.index', compact('escola'));
+}
+
 }
