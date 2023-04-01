@@ -67,13 +67,14 @@ Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->na
 
 Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])->name('avaliacao.destroy');
 
-
-    //rotas escola
+//
+// ESCOLA
+//
 
 Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escolas.create');
 Route::post('/escolas',[EscolaController::class,'store'])->name('escola.store');
 Route::get('/escolas/{escola}', [EscolaController::class, 'show'])->name('escola.show');
 Route::get('/escolas/{escola}/editar', [EscolaController::class, 'edit'])->name('escola.edit');
 Route::post('/escolas/{escola}', [EscolaController::class, 'update'])->name('escola.update');
-Route::get('/escola/excluir/{id}', [EscolaController::class, 'delete'])->name('escola.delete');
-Route::post('/escola/excluir/{id}', [CardapiosController::class, 'destroy'])->name('escola.destroy');
+Route::get('/escola/excluir/{escola}', [EscolaController::class, 'delete'])->name('escola.delete');
+Route::post('/escola/excluir/{escola}', [EscolaController::class, 'destroy'])->name('escola.destroy');

@@ -21,7 +21,7 @@ class EscolaController extends Controller
 
         $escola->save();
 
-    } 
+    }
     public function show($id)
     {
         $escola = Escola::findOrFail($id);
@@ -31,7 +31,7 @@ class EscolaController extends Controller
     public function edit($id)
     {
         $escola = Escola::findOrFail($id);
-        return view('escola.edit', ['escola' => $escola]); 
+        return view('escola.edit', ['escola' => $escola]);
     }
 
     public function update(Request $requisicao, Escola $escola)
@@ -39,18 +39,16 @@ class EscolaController extends Controller
         $escola->update($requisicao->all());
 
         return redirect()->route('escola.show', $escola->id);
-
     }
 
-    public function delete($id)
+    public function delete(Escola $escola)
     {
-        $escola = Escola::findOrFail($id);
         return view('escola.delete', ['escola' =>$escola]);
-}
+    }
 
-    public function destroy($id)
+    public function destroy(Escola $escola)
     {
-        $escola = Escola::findOrFail($id);
         $escola->delete();
+        return redirect()->route('escola.index');
     }
 }
