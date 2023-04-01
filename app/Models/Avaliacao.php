@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Avaliacao extends Model
 {
     use HasFactory;
+
+    protected $table = "avaliacao";
+
+    // Indica os campos que podem ser preenchidos pelo usuário
+    protected $fillable = [
+
+        'comentario'
+    ];
 }
