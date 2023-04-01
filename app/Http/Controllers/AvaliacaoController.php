@@ -21,6 +21,8 @@ class AvaliacaoController extends Controller
     public function create()
     {
         return view('avaliacao.create');
+        return redirect()->route('avaliacao.index');
+
     }
 
 

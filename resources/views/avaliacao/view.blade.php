@@ -12,10 +12,10 @@
         <div class="container">
             <h1>{{ $avaliacao->comentario }}</h1>
 
-           <a class="btn btn-light" href="{{ route('avaliacaos.index') }}">Voltar a lista</a>
-            <a class="btn btn-warning" href="{{ route('avaliacaos.edit', $avaliacao->id) }}">Editar</a>
+           <a class="btn btn-light" href="{{ route('avaliacao.index') }}">Voltar a lista</a>
+            <a class="btn btn-warning" href="{{ route('avaliacao.edit', $avaliacao->id) }}">Editar</a>
 
-            <form method="POST" action="{{ route('avaliacaos.destroy', $avaliacao->id) }}">
+            <form method="POST" action="{{ route('avaliacao.destroy', $avaliacao->id) }}">
                 @csrf
                 @method('DELETE')
 
