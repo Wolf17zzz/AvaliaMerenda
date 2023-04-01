@@ -29,37 +29,37 @@ class AvaliacaoController extends Controller
     public function store(Request $requisicao)
     {
 
-        $Avaliacao = new Avaliacao();
+        $avaliacao = new Avaliacao();
 
-        $Avaliacao->comentario = $requisicao->comentario;
+        $avaliacao->comentario = $requisicao->comentario;
 
-        $Avaliacao->save();
+        $avaliacao->save();
 
-        return redirect()->route('avaliacao.show', $Avaliacao->id);
+        return redirect()->route('avaliacao.show', $avaliacao->id);
     }
 
-    public function show(Avaliacao $Avaliacao)
+    public function show(Avaliacao $avaliacao)
     {
-        return view('avaliacao.view', compact('Avaliacao'));
+        return view('avaliacao.view', compact('avaliacao'));
     }
 
-    public function edit(Avaliacao $Avaliacao)
+    public function edit(Avaliacao $avaliacao)
     {
-        return view('avaliacao.edit', compact('Avaliacao'));
+        return view('avaliacao.edit', compact('avaliacao'));
     }
 
-    public function update(Request $requisicao, Avaliacao $Avaliacao)
+    public function update(Request $requisicao, Avaliacao $avaliacao)
     {
         // Atualiza o objeto com os dados da requisição
-        $Avaliacao->update($requisicao->all());
+        $avaliacao->update($requisicao->all());
 
         // Redireciona para a página de detalhes do Avaliacao
-        return redirect()->route('avaliacao.show', $Avaliacao->id);
+        return redirect()->route('avaliacao.show', $avaliacao->id);
     }
 
-    public function destroy(Avaliacao $Avaliacao)
+    public function destroy(Avaliacao $avaliacao)
     {
-        $Avaliacao->delete();
+        $avaliacao->delete();
 
         return redirect()->route('avaliacao.index');
     }

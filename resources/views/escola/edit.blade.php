@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Edição da Escola {{ ($escola->id) }}</h1>
+            <h1>Edição da Escola #{{ ($escola->id) }}</h1>
 
             <form method="POST" action="{{ route('escola.update', $escola->id) }}">
                 @csrf

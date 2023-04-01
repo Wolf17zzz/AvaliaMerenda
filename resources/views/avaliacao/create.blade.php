@@ -9,7 +9,7 @@
 
                 <div class="mb-3">
                     <label>Comentário:</label>
-                    <textarea name="avaliacao" id="" rows="5" class="form-control"></textarea>
+                    <textarea name="comentario" id="" rows="5" class="form-control"></textarea>
                 </div>
 
                 <div>

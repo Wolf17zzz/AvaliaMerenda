@@ -2,15 +2,15 @@
 @section('content')
 
         <div class="container">
-            <h1>Edição do comentário {{ ($comentario->id) }}</h1>
+            <h1>Edição do comentário #{{ ($avaliacao->id) }}</h1>
 
-            <form method="POST" action="{{ route('avaliacao.update', $comentario->id) }}">
+            <form method="POST" action="{{ route('avaliacao.update', $avaliacao->id) }}">
                 @csrf
-                @method('POST')
+                @method('PUT')
 
                 <div>
                     <label>Comentário:</label>
-                    <textarea name="avaliacao" id="" rows="5" class="form-control" value="{{ $avaliacao->comentario }}" ></textarea>
+                    <textarea name="comentario" id="" rows="5" class="form-control" value="{{ $avaliacao->comentario }}" ></textarea>
                 </div>
 
                 <div>
