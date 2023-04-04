@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EscolaController;
 
 use App\Http\Controllers\CardapiosController;
+use App\Http\Controllers\AvaliacaoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +52,19 @@ Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])-
 Route::get('home',[AuthController::class,'home'])->name('home');
 
 Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao.index');
+
+Route::get('/avaliacao/novo', [AvaliacaoController::class, 'create'])->name('avaliacao.create');
+
+Route::get('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'show'])->name('avaliacao.show');
+
+Route::get('/avaliacao/{avaliacao}/editar', [AvaliacaoController::class, 'edit'])->name('avaliacao.edit');
+
+Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
+
+Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->name('avaliacao.update');
+
+Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])->name('avaliacao.destroy');
+
 
 //
 // ESCOLA
