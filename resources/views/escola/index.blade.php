@@ -26,7 +26,7 @@
                     </a>
                 </td>
             </tr>
-        @endforeach
+            @endforeach
     </table>
 </div>
 @endsection

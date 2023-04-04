@@ -23,15 +23,15 @@ class EscolaController extends Controller
         return view('escola.index');
 
     }
-    public function show($id)
+    public function show(Escola $escola)
     {
-        $escola = Escola::findOrFail($id);
+        $escola = Escola::all();
         return view('escola.show', ['escola' => $escola]);
 
     }
-    public function edit($id)
+    public function edit(Escola $escola)
     {
-        $escola = Escola::findOrFail($id);
+        $escola = Escola::all();
         return view('escola.edit', ['escola' => $escola]);
     }
 
@@ -55,10 +55,8 @@ class EscolaController extends Controller
 
      public function index()
 {
-    // Pega todos os registos da tabela relacionada ao modelo Gato
-    $escola = Escola::all();
 
-    // Manda os dados para uma view, no caso gatos.index
+    $escola = Escola::all();
     return view('escola.index', compact('escola'));
 }
 

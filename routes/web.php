@@ -55,11 +55,11 @@ Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao
 // ESCOLA
 //
 Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escola.create');
-Route::post('/escolas',[EscolaController::class,'store'])->name('escola.store');
+Route::post('/escola',[EscolaController::class,'store'])->name('escola.store');
 Route::get('/escolas/{escola}', [EscolaController::class, 'show'])->name('escola.show');
 Route::get('/escolas/{escola}/editar', [EscolaController::class, 'edit'])->name('escola.edit');
 Route::post('/escolas/{escola}', [EscolaController::class, 'update'])->name('escola.update');
 
 Route::get('/escola/excluir/{escola}', [EscolaController::class, 'delete'])->name('escola.delete');
 Route::post('/escola/excluir/{escola}', [EscolaController::class, 'destroy'])->name('escola.destroy');
-Route::get('/escola', [EscolaController::class, 'index'])->name('escola.index');
+Route::get('/escolas', [EscolaController::class, 'index'])->name('escola.index');
