@@ -19,7 +19,7 @@
                 @csrf
                 @method('DELETE')
 
-                <input type="submit" value="Excluir avaliacao" class="btn btn-danger">
+                <input type="submit" value="Excluir avaliação" class="btn btn-danger">
             </form>
         </div>
     </body>
