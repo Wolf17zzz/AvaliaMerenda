@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EscolaController;
-use App\Http\Controllers\AvaliacaoController;
 
 use App\Http\Controllers\CardapiosController;
 
@@ -50,31 +49,17 @@ Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])-
 
 Route::get('home',[AuthController::class,'home'])->name('home');
 
-
-//rota para avaliação
 Route::get('/avaliacao', [AvaliacaoController::class, 'index'])->name('avaliacao.index');
-
-Route::get('/avaliacao/novo', [AvaliacaoController::class, 'create'])->name('avaliacao.create');
-
-Route::get('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'show'])->name('avaliacao.show');
-
-Route::get('/avaliacao/{avaliacao}/editar', [AvaliacaoController::class, 'edit'])->name('avaliacao.edit');
-
-Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
-
-Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->name('avaliacao.update');
-
-Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])->name('avaliacao.destroy');
 
 //
 // ESCOLA
 //
 Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escola.create');
-Route::post('/escola',[EscolaController::class,'store'])->name('escola.store');
+Route::get('/escola',[EscolaController::class,'store'])->name('escola.store');
 Route::get('/escolas/{escola}', [EscolaController::class, 'show'])->name('escola.show');
 Route::get('/escolas/{escola}/editar', [EscolaController::class, 'edit'])->name('escola.edit');
 Route::post('/escolas/{escola}', [EscolaController::class, 'update'])->name('escola.update');
 
-Route::get('/escola/excluir/{escola}', [EscolaController::class, 'delete'])->name('escola.delete');
-Route::post('/escola/excluir/{escola}', [EscolaController::class, 'destroy'])->name('escola.destroy');
+
+Route::delete('/escola/excluir/{escola}', [EscolaController::class, 'destroy'])->name('escola.destroy');
 Route::get('/escolas', [EscolaController::class, 'index'])->name('escola.index');
