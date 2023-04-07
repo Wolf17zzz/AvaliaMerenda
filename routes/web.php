@@ -3,10 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EscolaController;
-
 use App\Http\Controllers\CardapiosController;
 use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\EscolasController;
 
 
 /*
@@ -69,12 +68,10 @@ Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])
 //
 // ESCOLA
 //
-Route::get('/escolas/novo', [EscolaController::class, 'create'])->name('escola.create');
-Route::get('/escola',[EscolaController::class,'store'])->name('escola.store');
-Route::get('/escolas/{escola}', [EscolaController::class, 'show'])->name('escola.show');
-Route::get('/escolas/{escola}/editar', [EscolaController::class, 'edit'])->name('escola.edit');
-Route::post('/escolas/{escola}', [EscolaController::class, 'update'])->name('escola.update');
-
-
-Route::delete('/escola/excluir/{escola}', [EscolaController::class, 'destroy'])->name('escola.destroy');
-Route::get('/escolas', [EscolaController::class, 'index'])->name('escola.index');
+Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
+Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
+Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
+Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
+Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
+Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
+Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');

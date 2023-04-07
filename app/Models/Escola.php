@@ -11,7 +11,6 @@ class Escola extends Model
 
     protected $table = "escolas";
 
-    // Indica os campos que podem ser preenchidos pelo usuário
     protected $fillable = [
         'nome',
         'endereco',

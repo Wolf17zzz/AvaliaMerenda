@@ -40,7 +40,6 @@
 
                             <div class="row">
                                 <div class="col-5 text-left">
-                                    <a href="{{ route ('escola.create')}}" class="btn btn-link">Cadastrar nova Escola</a>
                                     <a href="#" class="btn btn-link">Esqueceu a senha?</a>
 
                                 </div>
