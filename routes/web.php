@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardapiosController;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\EscolasController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -22,6 +23,9 @@ use App\Http\Controllers\EscolasController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+                //Rota para usuario fazer login(novo)
+Route::get('/', [UserController::class, 'index'])->name('home.login');
 
                 //Rota para login dos usuarios
 Route::get('login',[AuthController::class,'index'])->name('login');
