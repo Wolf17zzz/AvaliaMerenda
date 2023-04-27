@@ -18,4 +18,9 @@ class Cardapio extends Model
         'bebida',
         'valor_calorico'
     ];
+
+    public function avaliacoes()
+    {
+        return $this->hasMany(Avaliacao::class);
+    }
 }

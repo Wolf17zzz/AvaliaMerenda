@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Avaliacao;
-
+use App\Models\Cardapio;
 
 class AvaliacaoController extends Controller
 {
@@ -26,14 +26,17 @@ class AvaliacaoController extends Controller
     }
 
 
-    public function store(Request $requisicao)
+    public function store(Request $requisicao, Cardapio $cardapio)
     {
+        $requisicao->validate([
+            'comentario' => 'required|string'
+        ]);
 
         $avaliacao = new Avaliacao();
 
         $avaliacao->comentario = $requisicao->comentario;
 
-        $avaliacao->save();
+        $cardapio->avaliacoes()->save($avaliacao);
 
         return redirect()->route('avaliacao.show', $avaliacao->id);
     }
@@ -45,6 +48,8 @@ class AvaliacaoController extends Controller
 
     public function edit(Avaliacao $avaliacao)
     {
+        // $this->authorize('update', $avaliacao);
+
         return view('avaliacao.edit', compact('avaliacao'));
     }
 

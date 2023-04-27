@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cardapio;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration
         Schema::create('avaliacao', function (Blueprint $table) {
             $table->id();
             $table->text('comentario');
-
+            $table->foreignIdFor(Cardapio::class);
 
             $table->timestamps();
         });

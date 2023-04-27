@@ -24,16 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-                //Rota para usuario fazer login(novo)
-Route::get('/', [UserController::class, 'index'])->name('home.login');
+// Route::middleware(['web'])->group(function () {
+//     Route::get('/entrar', [UserController:class, 'login'])->name('login');
+//     Route::post('/entrar', [AutenticacaoController:class, 'login'])->name('login.store');
 
-                //Rota para login dos usuarios
-Route::get('login',[AuthController::class,'index'])->name('login');
-Route::post('login',[AuthController::class,'login'])->name('login');
-
-                //Rota para cadastro dos usuarios
-Route::get('register',[Authcontroller::class,'register_view'])->name('register');
-Route::post('register',[Authcontroller::class,'register'])->name('register');
+//     // Route::get('/usuario')
+// })                
 
                 //Rota para cadastro do cardapio
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
@@ -62,7 +58,7 @@ Route::get('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'show'])->name
 
 Route::get('/avaliacao/{avaliacao}/editar', [AvaliacaoController::class, 'edit'])->name('avaliacao.edit');
 
-Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
+Route::post('/avaliacao/{cardapio}', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
 
 Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->name('avaliacao.update');
 
