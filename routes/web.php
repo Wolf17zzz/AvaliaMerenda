@@ -24,12 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::middleware(['web'])->group(function () {
-//     Route::get('/entrar', [UserController:class, 'login'])->name('login');
-//     Route::post('/entrar', [AutenticacaoController:class, 'login'])->name('login.store');
 
-//     // Route::get('/usuario')
-// })                
+                //Rota para login do usuario
+Route::get('/logins' []);
+                
 
                 //Rota para cadastro do cardapio
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
