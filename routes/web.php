@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardapiosController;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\EscolasController;
+use App\Http\Controllers\UsuariosController;
+
 use App\Http\Controllers\UserController;
 
 
@@ -29,7 +31,7 @@ Route::get('/', function () {
 //     Route::post('/entrar', [AutenticacaoController:class, 'login'])->name('login.store');
 
 //     // Route::get('/usuario')
-// })                
+// })
 
                 //Rota para cadastro do cardapio
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
@@ -75,3 +77,19 @@ Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name
 Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
 Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
 Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
+
+//Rota para Usuarios
+
+Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
+
+Route::get('/usuarios/novo', [UsuariosController::class, 'create'])->name('usuarios.create');
+
+Route::get('/usuarios/{usuarios}', [UsuariosController::class, 'show'])->name('usuarios.show');
+
+Route::get('/usuarios/{usuarios}/editar', [UsuariosController::class, 'edit'])->name('usuarios.edit');
+
+Route::post('/usuarios/{usuarios}', [UsuariosController::class, 'store'])->name('usuarios.store');
+
+Route::put('/usuarios/{usuarios}', [UsuariosController::class, 'update'])->name('usuarios.update');
+
+Route::delete('/usuarios/{usuarios}', [UsuariosController::class, 'destroy'])->name('usuarios.destroy');

@@ -2,70 +2,76 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuarios;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
 {
     public function index()
     {
-        $cadusuarios = Usuarios::all();
+        $usuarios = Usuarios::all();
 
-
-        return view('cadusuarios.index', compact('cadusuarios'));
+        return view('usuarios.index', compact('usuarios'));
     }
 
 
     public function create()
     {
-        return view('cadusuarios.create');
-        return redirect()->route('cadusuarios.index');
+        return view('usuarios.create');
+        return redirect()->route('usuarios.index');
 
     }
 
 
-    public function store(Request $requisicao, Cardapio $cardapio)
+    public function store(Request $requisicao, Usuarios $usuarios)
     {
         $requisicao->validate([
-            'comentario' => 'required|string'
+            'nome' => 'required|string',
+            'cpf' => 'required|string',
+            'email' => 'required|string',
+            'senha' => 'required|string'
+
         ]);
 
-        $cadusuarios = new cadusuarios();
+        $usuarios = new Usuarios();
 
-        $cadusuarios->comentario = $requisicao->comentario;
+        $usuarios->nome = $requisicao->nome;
+        $usuarios->cpf = $requisicao->cpf;
+        $usuarios->email = $requisicao->email;
+        $usuarios->senha = $requisicao->senha;
 
-        $cardapio->avaliacoes()->save($cadusuarios);
+        $usuarios->usuarios()->save($usuarios);
 
-        return redirect()->route('cadusuarios.show', $cadusuarios->id);
+        return redirect()->route('usuarios.show', $usuarios->id);
     }
 
-    public function show(cadusuarios $cadusuarios)
+    public function show(Usuarios $usuarios)
     {
-        return view('cadusuarios.view', compact('cadusuarios'));
+        return view('usuarios.view', compact('usuarios'));
     }
 
-    public function edit(cadusuarios $cadusuarios)
+    public function edit(Usuarios $usuarios)
     {
-        // $this->authorize('update', $cadusuarios);
+        // $this->authorize('update', $usuarios);
 
-        return view('cadusuarios.edit', compact('cadusuarios'));
+        return view('usuarios.edit', compact('usuarios'));
     }
 
-    public function update(Request $requisicao, cadusuarios $cadusuarios)
+    public function update(Request $requisicao, Usuarios $usuarios)
     {
         // Atualiza o objeto com os dados da requisição
-        $cadusuarios->update($requisicao->all());
+        $usuarios->update($requisicao->all());
 
-        // Redireciona para a página de detalhes do cadusuarios
-        return redirect()->route('cadusuarios.show', $cadusuarios->id);
+        // Redireciona para a página de detalhes do usuarios$usuarios
+        return redirect()->route('usuarios.show', $usuarios->id);
     }
 
-    public function destroy(cadusuarios $cadusuarios)
+    public function destroy(Usuarios $usuarios)
     {
-        $cadusuarios->delete();
+        $usuarios->delete();
 
-        return redirect()->route('cadusuarios.index');
+        return redirect()->route('usuarios.index');
     }
 
 }
 
-}
