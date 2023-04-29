@@ -1,14 +1,15 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardapiosController;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\EscolasController;
 use App\Http\Controllers\UsuariosController;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AutenticacaoController;
 
 
 /*
@@ -22,9 +23,20 @@ use App\Http\Controllers\UserController;
 |
 */
 
+<<<<<<< HEAD
 
 
                 //Rota para cadastro do cardapio
+=======
+Route::get('/', [AdminController::class, 'inicio'])->name('inicio');
+
+
+//Rota para login do usuario
+Route::get('/entrar', [AutenticacaoController::class, 'login'])->name('autenticacao.login');
+Route::post('/entrar',  [AutenticacaoController::class, 'store'])->name('autenticacao.store');
+
+//Rota para cadastro do cardapio
+>>>>>>> f7459062f450c44febe20d37f0277d7196353921
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
 
 Route::get('/cardapios/novo', [CardapiosController::class, 'create'])->name('cardapios.create');
