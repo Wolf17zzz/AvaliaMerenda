@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 
                 //Rota para login do usuario
-Route::get('/logins' []);
+
                 
 
                 //Rota para cadastro do cardapio
