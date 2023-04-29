@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('cadusuarios', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('cpf');
+            $table->string('email')->unique();
+            $table->string('senha');
+            $table->string('escolas');
+
+
             $table->timestamps();
         });
     }
