@@ -23,11 +23,9 @@ use App\Http\Controllers\AutenticacaoController;
 |
 */
 
-<<<<<<< HEAD
-
 
                 //Rota para cadastro do cardapio
-=======
+
 Route::get('/', [AdminController::class, 'inicio'])->name('inicio');
 
 
@@ -36,7 +34,7 @@ Route::get('/entrar', [AutenticacaoController::class, 'login'])->name('autentica
 Route::post('/entrar',  [AutenticacaoController::class, 'store'])->name('autenticacao.store');
 
 //Rota para cadastro do cardapio
->>>>>>> f7459062f450c44febe20d37f0277d7196353921
+
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
 
 Route::get('/cardapios/novo', [CardapiosController::class, 'create'])->name('cardapios.create');
