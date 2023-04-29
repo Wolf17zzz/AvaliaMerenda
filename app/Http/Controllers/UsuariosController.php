@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuarios;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
 {
     public function index()
     {
-        $usuarios = Usuarios::all();
+        $usuarios = Usuario::all();
 
         return view('usuarios.index', compact('usuarios'));
     }
@@ -23,7 +24,7 @@ class UsuariosController extends Controller
     }
 
 
-    public function store(Request $requisicao, Usuarios $usuarios)
+    public function store(Request $requisicao, Usuario $usuario)
     {
         $requisicao->validate([
             'nome' => 'required|string',
@@ -33,45 +34,47 @@ class UsuariosController extends Controller
 
         ]);
 
-        $usuarios = new Usuarios();
+        $usuario = new Usuario();
 
-        $usuarios->nome = $requisicao->nome;
-        $usuarios->cpf = $requisicao->cpf;
-        $usuarios->email = $requisicao->email;
-        $usuarios->senha = $requisicao->senha;
+        $usuario->nome = $requisicao->nome;
+        $usuario->cpf = $requisicao->cpf;
+        $usuario->email = $requisicao->email;
+        $usuario->senha = Hash::make($requisicao->senha);
 
-        $usuarios->usuarios()->save($usuarios);
+        $usuario->save();
 
-        return redirect()->route('usuarios.show', $usuarios->id);
+        return redirect()->route('usuarios.show', $usuario->id);
     }
 
-    public function show(Usuarios $usuarios)
+    public function show(Usuario  $usuario)
     {
-        return view('usuarios.view', compact('usuarios'));
+        return view('usuarios.view', compact('usuario'));
     }
 
-    public function edit(Usuarios $usuarios)
+    public function edit(Usuario $usuario)
     {
-        // $this->authorize('update', $usuarios);
+        // $this->authorize('update', $usuario);
 
-        return view('usuarios.edit', compact('usuarios'));
+        return view('usuarios.edit', compact('usuario'));
     }
 
-    public function update(Request $requisicao, Usuarios $usuarios)
+    public function update(Request $requisicao, Usuario $usuario)
     {
         // Atualiza o objeto com os dados da requisição
-        $usuarios->update($requisicao->all());
+        $usuario->update($requisicao->all());
 
-        // Redireciona para a página de detalhes do usuarios$usuarios
-        return redirect()->route('usuarios.show', $usuarios->id);
+        // Redireciona para a página de detalhes do usuario$usuario
+        return redirect()->route('usuarios.show', $usuario->id);
     }
 
-    public function destroy(Usuarios $usuarios)
+    public function destroy(Usuario $usuario)
     {
-        $usuarios->delete();
+        $usuario->delete();
 
         return redirect()->route('usuarios.index');
     }
 
 }
+
+
 

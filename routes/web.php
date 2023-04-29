@@ -22,16 +22,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-// Route::middleware(['web'])->group(function () {
-//     Route::get('/entrar', [UserController:class, 'login'])->name('login');
-//     Route::post('/entrar', [AutenticacaoController:class, 'login'])->name('login.store');
-
-//     // Route::get('/usuario')
-// })
 
                 //Rota para cadastro do cardapio
 Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
@@ -49,6 +40,7 @@ Route::put('/cardapios/{cardapio}', [CardapiosController::class, 'update'])->nam
 Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])->name('cardapios.destroy');
 
 
+//Rota para avaliação
 
 Route::get('home',[AuthController::class,'home'])->name('home');
 
@@ -78,18 +70,19 @@ Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.stor
 Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
 Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
 
+
 //Rota para Usuarios
 
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
 
 Route::get('/usuarios/novo', [UsuariosController::class, 'create'])->name('usuarios.create');
 
-Route::get('/usuarios/{usuarios}', [UsuariosController::class, 'show'])->name('usuarios.show');
+Route::get('/usuarios/{usuario}', [UsuariosController::class, 'show'])->name('usuarios.show');
 
-Route::get('/usuarios/{usuarios}/editar', [UsuariosController::class, 'edit'])->name('usuarios.edit');
+Route::get('/usuarios/{usuario}/editar', [UsuariosController::class, 'edit'])->name('usuarios.edit');
 
-Route::post('/usuarios/{usuarios}', [UsuariosController::class, 'store'])->name('usuarios.store');
+Route::post('/usuarios', [UsuariosController::class, 'store'])->name('usuarios.store');
 
-Route::put('/usuarios/{usuarios}', [UsuariosController::class, 'update'])->name('usuarios.update');
+Route::put('/usuarios/{usuario}', [UsuariosController::class, 'update'])->name('usuarios.update');
 
-Route::delete('/usuarios/{usuarios}', [UsuariosController::class, 'destroy'])->name('usuarios.destroy');
+Route::delete('/usuarios/{usuario}', [UsuariosController::class, 'destroy'])->name('usuarios.destroy');
