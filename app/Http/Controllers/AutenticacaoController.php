@@ -28,4 +28,10 @@ class AutenticacaoController extends Controller
 
         return redirect()->route('inicio');
     }
+
+    public function logout()
+    {
+        Auth::guard('usr')->logout();
+        return redirect()->route('login');
+    }
 }

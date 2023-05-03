@@ -36,6 +36,11 @@
                 </div>
 
                 <div>
+                    <label>Confirmar a Senha:</label>
+                    <input type="text" name="comfirmarsenha" class="form-control">
+                </div>
+
+                <div>
                     <input type="submit" name="Salvar Usuario" class="btn btn-primary">
                 </div>
 

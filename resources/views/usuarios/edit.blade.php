@@ -18,22 +18,27 @@
 
                 <div>
                     <label>Nome:</label>
-                    <input type="text" name="dia_semana" value="{{ $usuario->nome }}">
+                    <input type="text" name="nome" value="{{ $usuario->nome }}">
                 </div>
 
                 <div>
                     <label>CPF:</label>
-                    <input type="text" name="refeicao_principal" value="{{ $usuario->cpf }}">
+                    <input type="text" name="cpf" value="{{ $usuario->cpf }}">
                 </div>
 
                 <div>
                     <label>Email:</label>
-                    <input type="text" name="sobremesa" value="{{ $usuario->email }}">
+                    <input type="text" name="email" value="{{ $usuario->email }}">
                 </div>
 
                 <div>
                     <label>Senha:</label>
-                    <input type="text" name="bebida" value="{{ $usuario->senha }}">
+                    <input type="text" name="senha" value="{{ $usuario->senha }}">
+                </div>
+
+                <div>
+                    <label>Confirmar a Senha:</label>
+                    <input type="text" name="confirmarsenha" value="{{$usuario->confirmarsenha}}">
                 </div>
 
                 <div>

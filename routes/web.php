@@ -24,14 +24,17 @@ use App\Http\Controllers\AutenticacaoController;
 */
 
 
-                //Rota para cadastro do cardapio
 
-Route::get('/', [AdminController::class, 'inicio'])->name('inicio');
-
+// Apenas logado
+Route::middleware('auth:usr')->group(function(){
+    Route::get('/', [AdminController::class, 'inicio'])->name('inicio');
+});
 
 //Rota para login do usuario
-Route::get('/entrar', [AutenticacaoController::class, 'login'])->name('autenticacao.login');
+Route::get('/entrar', [AutenticacaoController::class, 'login'])->name('login');
 Route::post('/entrar',  [AutenticacaoController::class, 'store'])->name('autenticacao.store');
+
+Route::get('/sair', [AutenticacaoController::class, 'logout'])->name('autenticacao.logout');
 
 //Rota para cadastro do cardapio
 
