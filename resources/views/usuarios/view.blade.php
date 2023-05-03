@@ -18,6 +18,9 @@
 
             <h3>Senha: {{ $usuario->senha }}</h3>
 
+            <h3>Confirmar a Senha: {{ $usuario->confirmarsenha }}</h3>
+
+
 
                 <br>
                 <br>
