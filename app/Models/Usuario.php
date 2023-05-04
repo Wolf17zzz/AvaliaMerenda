@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
     use HasFactory;
 
@@ -18,4 +19,9 @@ class Usuario extends Model
         'email',
         'senha'
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->senha;
+    }
 }
