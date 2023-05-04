@@ -37,11 +37,6 @@
                 </div>
 
                 <div>
-                    <label>Confirmar a Senha:</label>
-                    <input type="text" name="confirmarsenha" value="{{$usuario->confirmarsenha}}">
-                </div>
-
-                <div>
                     <input type="submit" name="Atualizar Usuario" class="btn btn-primary">
                 </div>
 

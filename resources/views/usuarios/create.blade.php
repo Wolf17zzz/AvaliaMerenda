@@ -37,7 +37,7 @@
 
                 <div>
                     <label>Confirmar a Senha:</label>
-                    <input type="text" name="comfirmarsenha" class="form-control">
+                    <input type="text" name="senha_confirmation" class="form-control">
                 </div>
 
                 <div>
