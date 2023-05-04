@@ -13,38 +13,42 @@
             <h1>Novo Usuário</h1>
 
             <form method="POST" action="{{ route('usuarios.store') }}">
-                @csrf
-
-                <div class="mb-3">
-                    <label>Nome:</label>
-                    <input type="text" name="nome" class="form-control">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputNome">Nome:</label>
+                    <input type="nome" class="form-control" id="inputnome" placeholder="Seu Nome">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputCpf">CPF:</label>
+                    <input type="cpf" class="form-control" id="inputCpf" placeholder="000.000.000-00">
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                    <label>CPF:</label>
-                    <input type="text" name="cpf" class="form-control">
+                <div class="form-group">
+                    <label for="inputEmail">Email:</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@gmail.com">
                 </div>
-
-                <div class="mb-3">
-                    <label>Email:</label>
-                    <input type="text" name="email" class="form-control">
+                <div class="form-group">
+                    <label for="inputSenha">Senha:</label>
+                    <input type="senha" class="form-control" id="inputSenha" placeholder="Digite sua senha">
                 </div>
-
-                <div>
-                    <label>Senha:</label>
-                    <input type="text" name="senha" class="form-control">
+                <div class="form-group">
+                    <label for="inputSenha">Confirme sua senha:</label>
+                    <input type="senha" class="form-control" id="inputSenha" placeholder="Confirme sua senha">
                 </div>
-
-                <div>
-                    <label>Confirmar a Senha:</label>
-                    <input type="text" name="senha_confirmation" class="form-control">
+                    <div class="form-group col-md-4">
+                <label for="inputEscola">Escola:</label>
+                <select id="inputEscola" class="form-control">
+                    <option selected>Selecione a escola</option>
+                    <option>Aimone Sala</option>
+                    <option>Etec</option>
+                    <option>João Arruda Brasil</option>
+                    <option>Waldemar Queiroz</option>
+                </select>
                 </div>
-
-                <div>
-                    <input type="submit" name="Salvar Usuario" class="btn btn-primary">
                 </div>
-
+            <button type="submit" class="btn btn-primary">Entrar</button>
             </form>
         </div>
     </body>
 </html>
+

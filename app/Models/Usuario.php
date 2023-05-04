@@ -17,7 +17,8 @@ class Usuario extends Authenticatable
         'nome',
         'cpf',
         'email',
-        'senha'
+        'senha',
+        'escola'
     ];
 
     public function getAuthPassword()

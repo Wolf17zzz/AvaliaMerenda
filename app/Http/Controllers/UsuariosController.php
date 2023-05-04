@@ -30,7 +30,8 @@ class UsuariosController extends Controller
             'nome' => 'required|string',
             'cpf' => 'required|string',
             'email' => 'required|string',
-            'senha' => 'required|string|confirmed'
+            'senha' => 'required|string|confirmed',
+            'escola' => 'required|string'
 
         ]);
 
@@ -40,6 +41,7 @@ class UsuariosController extends Controller
         $usuario->cpf = $requisicao->cpf;
         $usuario->email = $requisicao->email;
         $usuario->senha = Hash::make($requisicao->senha);
+        $usuario->escola = Hash::make($requisicao->escola);
 
 
         $usuario->save();
