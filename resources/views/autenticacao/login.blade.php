@@ -12,7 +12,7 @@
             @csrf
 
             <h1>Login</h1>
-            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <p>Digite os seus dados de acesso nos campos abaixo.</p>
             <label for="email">E-mail</label>
             <input type="email" name="email" placeholder="Digite seu e-mail" autofocus="true" />
             @error('email')
