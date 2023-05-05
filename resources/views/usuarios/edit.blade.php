@@ -36,6 +36,17 @@
                     <input type="text" name="senha" value="{{ $usuario->senha }}">
                 </div>
 
+                <div class="form-group col-md-4">
+                    <label for="inputEscola">Escola:</label>
+                    <select id="inputEscola" class="form-control">
+                        <option selected>Selecione a escola</option>
+                        <option>Aimone Sala</option>
+                        <option>Etec</option>
+                        <option>João Arruda Brasil</option>
+                        <option>Waldemar Queiroz</option>
+                </select>
+            </div>
+
                 <div>
                     <input type="submit" name="Atualizar Usuario" class="btn btn-primary">
                 </div>

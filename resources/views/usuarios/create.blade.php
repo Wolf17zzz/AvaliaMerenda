@@ -36,14 +36,14 @@
                     <input type="senha" class="form-control" id="inputSenha" placeholder="Confirme sua senha">
                 </div>
                     <div class="form-group col-md-4">
-                <label for="inputEscola">Escola:</label>
-                <select id="inputEscola" class="form-control">
-                    <option selected>Selecione a escola</option>
-                    <option>Aimone Sala</option>
-                    <option>Etec</option>
-                    <option>João Arruda Brasil</option>
-                    <option>Waldemar Queiroz</option>
-                </select>
+                        <label for="inputEscola">Escola:</label>
+                        <select id="inputEscola" class="form-control">
+                        <option selected>Selecione a escola</option>
+                        <option>Aimone Sala</option>
+                        <option>Etec</option>
+                        <option>João Arruda Brasil</option>
+                        <option>Waldemar Queiroz</option>
+                    </select>
                 </div>
                 </div>
             <button type="submit" class="btn btn-primary">Entrar</button>
