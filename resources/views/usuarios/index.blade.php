@@ -20,6 +20,7 @@
                     <th>CPF</th>
                     <th>Email</th>
                     <th>Senha</th>
+                    <th>Escola</th>
                 </tr>
 
                 @foreach ($usuarios as $usuarios)
@@ -28,6 +29,8 @@
                         <td>{{ $usuarios->cpf }}</td>
                         <td>{{ $usuarios->email }}</td>
                         <td>{{ $usuarios->senha }}</td>
+                        <td>{{ $usuarios->escola }}</td>
+
                         <td>
                             <a class="link" href="{{ route('usuarios.show', $usuarios->id) }}">Ver</a>
                         </td>

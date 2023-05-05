@@ -18,7 +18,7 @@
 
             <h3>Senha: {{ $usuario->senha }}</h3>
 
-
+            <h3>Escola: {{ $usuario->escola }}</h3>
 
                 <br>
                 <br>
