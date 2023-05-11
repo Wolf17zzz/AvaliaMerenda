@@ -28,6 +28,7 @@ class CardapiosController extends Controller
         $cardapio->sobremesa = $requisicao->sobremesa;
         $cardapio->bebida = $requisicao->bebida;
         $cardapio->valor_calorico = $requisicao->valor_calorico;
+        $cardapio->id_escolas = $requisicao->id_escola;
 
         $cardapio->save();
 

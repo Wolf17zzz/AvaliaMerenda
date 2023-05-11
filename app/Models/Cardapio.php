@@ -16,7 +16,8 @@ class Cardapio extends Model
         'refeicao_principal',
         'sobremesa',
         'bebida',
-        'valor_calorico'
+        'valor_calorico',
+        'id_escolas'
     ];
 
     public function avaliacoes()
