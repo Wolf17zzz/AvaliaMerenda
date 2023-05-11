@@ -22,6 +22,6 @@
                     <button type="submit" class="btn btn-primary">Publicar comentário</button>
                 </form>
             @endforeach
-        </div>  
+        </div>
     @endforeach
 @endsection

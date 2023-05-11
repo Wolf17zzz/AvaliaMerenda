@@ -45,7 +45,7 @@ class UsuariosController extends Controller
 
         $usuario->save();
 
-        return redirect()->route('usuarios.show', $usuario->id);
+        return redirect()->route('login');
     }
 
     public function show(Usuario  $usuario)
