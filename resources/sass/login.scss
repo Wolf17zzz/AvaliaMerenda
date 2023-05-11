@@ -20,6 +20,12 @@ body {
     background-color: #480ca8;
 }
 
+.tituloLogin {
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+
 .formLogin {
     display: flex;
     flex-direction: column;
