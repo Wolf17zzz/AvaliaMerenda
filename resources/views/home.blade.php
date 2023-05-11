@@ -12,6 +12,9 @@
             <h3>{{ $cardapio->valor_calorico }}</h3>
             <h3>{{ $cardapio->id_escolas }}</h3>
 
+            @foreach($cardapio->avaliacoes as $avaliacao)
+                <form action=""></form>
+            @endforeach
         </div>
     @endforeach
 @endsection
