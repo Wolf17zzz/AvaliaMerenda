@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cardapio;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function inicio()
     {
-        return view('home');
+        $cardapios = Cardapio::all();
+
+        return view('home', compact('cardapios'));
     }
 }
