@@ -32,7 +32,7 @@ class UsuariosController extends Controller
             'cpf' => 'required|string',
             'email' => 'required|string',
             'senha' => 'required|string|confirmed',
-            'escola_id' => 'required|exists:escola,id'
+            'escola_id' => 'required|exists:escolas,id'
         ]);
 
         $usuario = new Usuario();
