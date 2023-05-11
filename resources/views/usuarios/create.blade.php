@@ -8,18 +8,21 @@
 
         <title>Cadastro de Usuários</title>
 
-        @vite(['resources/sass/cadastro.scsss'])
+        @vite(['resources/sass/cadastro.scss'])
     </head>
     <body>
-        <div class="container mb-3">
-            <h1>Novo Usuário</h1>
+        <div class="page">
             <div class="form">
-                <form action="{{route('usuarios.store')}}" method="POST">
+                <form action="{{route('usuarios.store')}}" method="POST" class="formCadastro">
                     @csrf
+                    <div class="tituloCadastro">
+                        <h1>Cadastrar-se</h1>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNome">Nome:</label>
-                            <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" id="inputnome" placeholder="Seu Nome">
+                            <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" id="inputnome" placeholder="Nome">
 
                             @error('nome')
                                 <div class="alert alert-danger">{{ $message }}</div>
