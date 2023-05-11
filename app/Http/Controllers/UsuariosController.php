@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Escola;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,9 +19,9 @@ class UsuariosController extends Controller
 
     public function create()
     {
-        return view('usuarios.create');
-        return redirect()->route('usuarios.index');
+        $escolas = Escola::all();
 
+        return view('usuarios.create', compact('escolas'));
     }
 
 
@@ -31,8 +32,7 @@ class UsuariosController extends Controller
             'cpf' => 'required|string',
             'email' => 'required|string',
             'senha' => 'required|string|confirmed',
-            'escola' => 'required|string'
-
+            'escola_id' => 'required|exists:escolas,id'
         ]);
 
         $usuario = new Usuario();
@@ -41,8 +41,7 @@ class UsuariosController extends Controller
         $usuario->cpf = $requisicao->cpf;
         $usuario->email = $requisicao->email;
         $usuario->senha = Hash::make($requisicao->senha);
-        $usuario->escola = Hash::make($requisicao->escola);
-
+        $usuario->escola_id = $requisicao->escola_id;
 
         $usuario->save();
 

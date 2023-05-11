@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cpf');
             $table->string('email')->unique();
             $table->string('senha');
-            $table->string('escola');
+            $table->integer('escola_id');
 
 
             $table->timestamps();
