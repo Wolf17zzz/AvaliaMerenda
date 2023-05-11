@@ -13,43 +13,73 @@
     <body>
         <div class="container mb-3">
             <h1>Novo Usuário</h1>
+            <div class="form">
+                <form action="{{route('usuarios.store')}}" method="POST">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNome">Nome:</label>
+                            <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" id="inputnome" placeholder="Seu Nome">
 
-            <form method="POST" action="{{ route('usuarios.store') }}">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                    <label for="inputNome">Nome:</label>
-                    <input type="nome" class="form-control" id="inputnome" placeholder="Seu Nome">
+                            @error('nome')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputCpf">CPF:</label>
+                            <input type="text" name="cpf" value="{{ old('cpf') }}" class="form-control" id="inputCpf" placeholder="000.000.000-00">
+
+                            @error('cpf')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <div class="form-group col-md-6">
-                    <label for="inputCpf">CPF:</label>
-                    <input type="cpf" class="form-control" id="inputCpf" placeholder="000.000.000-00">
+
                     </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail">Email:</label>
+                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="inputEmail" placeholder="exemplo@gmail.com">
+
+                        @error('email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="form-group">
-                    <label for="inputEmail">Email:</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="exemplo@gmail.com">
+
+                    <div class="form-group">
+                        <label for="inputSenha">Senha:</label>
+                        <input type="password" name="senha" value="{{ old('senha') }}" class="form-control" id="inputSenha" placeholder="Digite sua senha">
+
+                        @error('senha')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="form-group">
-                    <label for="inputSenha">Senha:</label>
-                    <input type="senha" class="form-control" id="inputSenha" placeholder="Digite sua senha">
+
+                    <div class="form-group">
+                        <label for="inputSenha">Confirme sua senha:</label>
+                        <input type="password" name="senha_confirmation" value="{{ old('senha') }}" class="form-control" id="inputSenha" placeholder="Confirme sua senha">
+
+                        @error('senha')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="form-group">
-                    <label for="inputSenha">Confirme sua senha:</label>
-                    <input type="senha" class="form-control" id="inputSenha" placeholder="Confirme sua senha">
-                </div>
-                    <div class="form-group col-md-4">
+
+                    <div class="form-group">
                         <label for="inputEscola">Escola:</label>
-                        <select id="inputEscola" class="form-control">
-                        <option selected>Selecione a escola</option>
-                        <option>Aimone Sala</option>
-                        <option>Etec</option>
-                        <option>João Arruda Brasil</option>
-                        <option>Waldemar Queiroz</option>
-                    </select>
-                </div>
-                </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </form>
+                        <select name="escola_id" id="inputEscola" class="form-control">
+                            @foreach ($escolas as $escola)
+                                <option value="{{ $escola->id }}">{{ $escola->nome }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('escola_id')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                </form>
+            </div>
         </div>
     </body>
 </html>
