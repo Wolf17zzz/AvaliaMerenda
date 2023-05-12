@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('comentario');
             $table->foreignIdFor(Cardapio::class);
 
+
             $table->timestamps();
         });
     }
