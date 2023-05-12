@@ -13,7 +13,7 @@
             <h3>{{ $cardapio->id_escolas }}</h3>
 
             @foreach($cardapio->avaliacoes as $avaliacao)
-                <form method="POST" action="{{  route('avaliacao.store') }}">
+                <form method="POST" action="{{  route('avaliacao.index') }}">
                     @csrf
                     <div class="form-group">
                         <label for="avaliacao">Comentário:</label>
