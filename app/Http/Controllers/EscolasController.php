@@ -30,7 +30,7 @@ class EscolasController extends Controller
      */
     public function store(Request $requisicao)
     {
-    
+
         $escola = new Escola();
 
         // Preenche os campos do objeto com os dados da requisição
@@ -42,7 +42,7 @@ class EscolasController extends Controller
         $escola->save();
 
         // Redireciona para a página de detalhes da escola
-        return redirect()->route('escolas.show', $escola->id);
+        return redirect()->route('login');
     }
 
     /**
