@@ -13,14 +13,23 @@ class CardapiosController extends Controller
         return view('cardapios.index', compact('cardapios'));
     }
 
-    
+
     public function create()
     {
         return view('cardapios.create');
     }
-        
+
     public function store(Request $requisicao)
     {
+        $requisicao->validate([
+            'dia_semana' => 'required|string',
+            'refeicao_principal' => 'required|string',
+            'sobremesa' => 'required|string',
+            'bebida' => 'required|string|',
+            'valor_calorico' =>'required|string|';
+            'escola_id' => 'required|exists:escolas,id'
+        ]);
+
         $cardapio = new Cardapio();
 
         $cardapio->dia_semana = $requisicao->dia_semana;
@@ -28,7 +37,7 @@ class CardapiosController extends Controller
         $cardapio->sobremesa = $requisicao->sobremesa;
         $cardapio->bebida = $requisicao->bebida;
         $cardapio->valor_calorico = $requisicao->valor_calorico;
-        $cardapio->id_escolas = $requisicao->id_escola;
+        $cardapio->escolas_id = $requisicao->escolas_id;
 
         $cardapio->save();
 

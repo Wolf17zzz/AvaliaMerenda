@@ -19,7 +19,7 @@
                     <label>Dia da Semana</label>
                     <input type="text" name="dia_semana" class="form-control">
                 </div>
-                
+
                 <div class="mb-3">
                     <label>Prato Principal</label>
                     <input type="text" name="refeicao_principal" class="form-control">
@@ -39,6 +39,20 @@
                     <label>Valor Calórico</label>
                     <input type="text" name="valor_calorico" class="form-control">
                 </div>
+
+                <div class="form-group">
+                    <label for="inputEscola">Escola:</label>
+                    <select name="escola_id" id="inputEscola" class="form-control">
+                        @foreach ($escolas as $escola)
+                            <option value="{{ $escola->id }}">{{ $escola->nome }}</option>
+                        @endforeach
+                    </select>
+
+                    @error('escola_id')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
 
                 <div>
                     <input type="submit" name="Salvar Cardapio" class="btn btn-primary">
