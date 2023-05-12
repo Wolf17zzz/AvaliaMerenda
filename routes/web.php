@@ -65,7 +65,7 @@ Route::get('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'show'])->name
 
 Route::get('/avaliacao/{avaliacao}/editar', [AvaliacaoController::class, 'edit'])->name('avaliacao.edit');
 
-Route::post('/avaliacao/{cardapio}', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
+Route::post('/avaliacao', [AvaliacaoController::class, 'store'])->name('avaliacao.store');
 
 Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->name('avaliacao.update');
 
