@@ -26,7 +26,7 @@ class CardapiosController extends Controller
             'refeicao_principal' => 'required|string',
             'sobremesa' => 'required|string',
             'bebida' => 'required|string|',
-            'valor_calorico' =>'required|string|';
+            'valor_calorico' =>'required|string|',
             'escola_id' => 'required|exists:escolas,id'
         ]);
 
