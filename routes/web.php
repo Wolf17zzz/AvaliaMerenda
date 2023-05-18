@@ -76,11 +76,17 @@ Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])
 // ESCOLA
 //
 Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
+
 Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
+
 Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
+
 Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
+
 Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
+
 Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
+
 Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
 
 
@@ -90,7 +96,7 @@ Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.in
 
 Route::get('/usuarios/novo', [UsuariosController::class, 'create'])->name('usuarios.create');
 
-Route::get('/usuarios/{usuario}', [UsuariosController::class, 'show'])->name('usuarios.show');
+Route::get('/usuarios', [UsuariosController::class, 'show'])->name('usuarios.show');
 
 Route::get('/usuarios/{usuario}/editar', [UsuariosController::class, 'edit'])->name('usuarios.edit');
 
