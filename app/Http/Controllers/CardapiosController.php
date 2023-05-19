@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cardapio;
+use App\Models\Escola;
 
 class CardapiosController extends Controller
 {
@@ -16,7 +17,8 @@ class CardapiosController extends Controller
 
     public function create()
     {
-        return view('cardapios.create');
+        $escolas = Escola::all();
+        return view('cardapios.create', compact('escolas'));
     }
 
     public function store(Request $requisicao)

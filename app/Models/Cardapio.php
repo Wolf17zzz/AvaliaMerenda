@@ -17,7 +17,7 @@ class Cardapio extends Model
         'sobremesa',
         'bebida',
         'valor_calorico',
-        'escola'
+        'escolas_id'
 
     ];
 

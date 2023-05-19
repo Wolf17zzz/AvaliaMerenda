@@ -16,4 +16,9 @@ class Escola extends Model
         'endereco',
         'cnpj'
     ];
+
+    public function cardapios()
+    {
+        return $this->hasMany(Cardapio::class, 'escolas_id');
+    }
 }

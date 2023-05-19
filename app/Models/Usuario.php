@@ -18,11 +18,16 @@ class Usuario extends Authenticatable
         'cpf',
         'email',
         'senha',
-        'escola'
+        'escola_id'
     ];
 
     public function getAuthPassword()
     {
         return $this->senha;
+    }
+
+    public function escola()
+    {
+        return $this->belongsTo(Escola::class, 'escola_id');
     }
 }
