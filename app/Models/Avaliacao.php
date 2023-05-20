@@ -13,6 +13,7 @@ class Avaliacao extends Model
 
     // Indica os campos que podem ser preenchidos pelo usuário
     protected $fillable = [
+        
         'cardapio_id',
         'comentario'
     ];
