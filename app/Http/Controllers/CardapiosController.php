@@ -29,7 +29,7 @@ class CardapiosController extends Controller
             'sobremesa' => 'required|string',
             'bebida' => 'required|string|',
             'valor_calorico' =>'required|string|',
-            'escola_id' => 'required|exists:escolas,id'
+            'escolas_id' => 'required|exists:escolas,id'
         ]);
 
         $cardapio = new Cardapio();

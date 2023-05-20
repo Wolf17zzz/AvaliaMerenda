@@ -9,7 +9,8 @@ export default defineConfig({
                 'resources/sass/login.scss',
                 'resources/js/app.js',
                 'resources/sass/cadastro.scss',
-                'resources/sass/navigation.scss'
+                'resources/sass/navigation.scss',
+                'resources/sass/home.scss'
             ],
             refresh: true,
         }),

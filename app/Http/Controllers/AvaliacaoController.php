@@ -29,16 +29,20 @@ class AvaliacaoController extends Controller
     public function store(Request $requisicao, Cardapio $cardapio)
     {
         $requisicao->validate([
-            'comentario' => 'required|string'
+            'comentario' => 'required|string',
+            'cardapio_id' => 'required'
         ]);
 
         $avaliacao = new Avaliacao();
 
         $avaliacao->comentario = $requisicao->comentario;
 
-        $cardapio->avaliacoes()->save($avaliacao);
+        $avaliacao->cardapio_id = $requisicao->cardapio_id;
+        
 
-        return redirect()->route('avaliacao.show', $avaliacao->id);
+        $avaliacao->save();
+
+        return redirect()->back();
     }
 
     public function show(Avaliacao $avaliacao)

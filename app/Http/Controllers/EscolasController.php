@@ -46,7 +46,7 @@ class EscolasController extends Controller
     }
 
     /**
-     * Mostra um gato específico
+     * Mostra uma escola específico
      */
     public function show(Escola $escola)
     {
@@ -55,7 +55,7 @@ class EscolasController extends Controller
     }
 
     /**
-     * Mostra o formulário para editar um gato específico
+     * Mostra o formulário para editar uma escola específico
      */
     public function edit(Escola $escola)
     {

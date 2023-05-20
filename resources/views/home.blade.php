@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Bem vindo</h1>
 
     @foreach($cardapios as $cardapio)
         <div>
@@ -11,17 +10,21 @@
             <h3>{{ $cardapio->bebida }}</h3>
             <h3>{{ $cardapio->valor_calorico }}</h3>
             <h3>{{ $cardapio->id_escolas }}</h3>
-
+            
+            <form method="POST" action="{{  route('avaliacao.store') }}">
+                <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}">
+                
+                @csrf
+                <div class="form-group">
+                    <label for="avaliacao">Comentário:</label>
+                    <textarea class="form-control" id="avaliacao" name="comentario"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Publicar comentário</button>
+            </form>
+            
             @foreach($cardapio->avaliacoes as $avaliacao)
-                <form method="POST" action="{{  route('avaliacao.store') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="avaliacao">Comentário:</label>
-                        <textarea class="form-control" id="avaliacao" name="comentario"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Publicar comentário</button>
-                </form>
+                {{ $avaliacao }}
             @endforeach
         </div>
-    @endforeach
+        @endforeach
 @endsection
