@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->text('comentario');
             $table->foreignIdFor(Cardapio::class);
-
+            $table->foreignId('usuario_id');
 
             $table->timestamps();
         });

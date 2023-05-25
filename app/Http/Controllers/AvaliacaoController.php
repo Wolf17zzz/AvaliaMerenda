@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Avaliacao;
 use App\Models\Cardapio;
+use Illuminate\Support\Facades\Auth;
 
 class AvaliacaoController extends Controller
 {
@@ -38,7 +39,7 @@ class AvaliacaoController extends Controller
         $avaliacao->comentario = $requisicao->comentario;
 
         $avaliacao->cardapio_id = $requisicao->cardapio_id;
-        
+        $avaliacao->cardapio_id = Auth::user()->id;
 
         $avaliacao->save();
 

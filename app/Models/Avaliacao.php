@@ -13,7 +13,7 @@ class Avaliacao extends Model
 
     // Indica os campos que podem ser preenchidos pelo usuário
     protected $fillable = [
-        
+
         'cardapio_id',
         'comentario'
     ];
@@ -21,5 +21,10 @@ class Avaliacao extends Model
     public function cardapio()
     {
         return $this->belongsTo(Cardapio::class);
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class);
     }
 }
