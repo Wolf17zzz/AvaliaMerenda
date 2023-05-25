@@ -39,7 +39,7 @@ class AvaliacaoController extends Controller
         $avaliacao->comentario = $requisicao->comentario;
 
         $avaliacao->cardapio_id = $requisicao->cardapio_id;
-        $avaliacao->cardapio_id = Auth::user()->id;
+        $avaliacao->usuario_id = Auth::user()->id;
 
         $avaliacao->save();
 
