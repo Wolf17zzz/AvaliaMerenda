@@ -10,7 +10,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/sass/cadastro.scss',
                 'resources/sass/navigation.scss',
-                'resources/sass/home.scss'
+                'resources/sass/home.scss',
+                'resources/sass/cardapio.scss'     
             ],
             refresh: true,
         }),

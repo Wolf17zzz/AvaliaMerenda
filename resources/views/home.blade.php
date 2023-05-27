@@ -23,7 +23,8 @@
             </form>
 
             @foreach($cardapio->avaliacoes as $avaliacao)
-                {{ $avaliacao }}
+                {{ $avaliacao->usuario->nome }}:
+                {{ $avaliacao->comentario }} <br>
             @endforeach
         </div>
         @endforeach
