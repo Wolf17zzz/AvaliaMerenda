@@ -15,7 +15,8 @@ class Avaliacao extends Model
     protected $fillable = [
 
         'cardapio_id',
-        'comentario'
+        'comentario',
+        'nota'
     ];
 
     public function cardapio()

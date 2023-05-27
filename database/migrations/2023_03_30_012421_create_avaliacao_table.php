@@ -17,6 +17,8 @@ return new class extends Migration
         Schema::create('avaliacao', function (Blueprint $table) {
             $table->id();
             $table->text('comentario');
+            $table->integer('nota');
+
             $table->foreignIdFor(Cardapio::class);
             $table->foreignId('usuario_id');
 
