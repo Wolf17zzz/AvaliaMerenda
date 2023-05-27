@@ -14,13 +14,14 @@
         }
     </style>
 
+
     @foreach($cardapios as $cardapio)
         <div>
             <h1>{{ $cardapio->dia_semana }}</h1>
-            <h3>{{ $cardapio->refeicao_principal }}</h3>
-            <h3>{{ $cardapio->sobremesa }}</h3>
-            <h3>{{ $cardapio->bebida }}</h3>
-            <h3>{{ $cardapio->valor_calorico }}</h3>
+            <h4>{{ $cardapio->refeicao_principal }}</h4>
+            <h4>{{ $cardapio->sobremesa }}</h4>
+            <h4>{{ $cardapio->bebida }}</h4>
+            <h4>{{ $cardapio->valor_calorico }}</h4>
             <h3>{{ $cardapio->id_escolas }}</h3>
 
             <div class="p-4 border rounded m-3">
@@ -52,8 +53,8 @@
 
 
             @foreach($cardapio->avaliacoes as $avaliacao)
-                {{ $avaliacao->usuario->nome }}:
-                {{ $avaliacao->comentario }} <br>
+                <h6>{{ $avaliacao->usuario->nome }}:
+                {{ $avaliacao->comentario }} <br> </h6>
             @endforeach
         </div>
         @endforeach
