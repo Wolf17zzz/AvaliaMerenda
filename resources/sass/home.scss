@@ -1,2 +1,70 @@
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.cardapio-container {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  
+    .cardapio-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  
+    .cardapio-item {
+      margin-bottom: 5px;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .label {
+      font-weight: bold;
+    }
+  
+    .nota-scale {
+      display: flex;
+      justify-content: space-between;
+      border: 20px;
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    
+  
+    .btn-primary {
+            background-color: #f72585;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;      
+    }
+
+    .nota-container {
+        label {
+          font-weight: bold;
+        }
+      
+        input[type="range"].slider {
+          width: 100%;
+        }
+      
+        .nota-scale {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 5px;
+          font-size: 14px;
+          font-weight: bold;
+      
+          p {
+            margin: 0;
+          }
+        }
+      }
+      
+  }
+  
