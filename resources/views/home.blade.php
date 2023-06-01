@@ -4,7 +4,9 @@
 
 @vite(['resources/sass/home.scss'])
 
-
+    <h1 class="text-center display-1">
+        {{ Auth::user()->escola->nome }}
+    </h1>
 
     @foreach($cardapios as $cardapio)
         <div class="cardapio-container">

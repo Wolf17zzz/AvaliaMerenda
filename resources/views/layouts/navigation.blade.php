@@ -4,10 +4,17 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Avalia Merenda</a>
+
   <div class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('inicio') }}"><i class="fas fa-home"></i> Início</a>
+      </li>
+    </ul>
+
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/perfil"><i class="fas fa-user"></i> Usuário</a>
+        <a class="nav-link" href="{{ route('usuarios.perfil') }}"><i class="fas fa-user"></i> Usuário</a>
       </li>
     </ul>
   </div>

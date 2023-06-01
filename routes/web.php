@@ -74,9 +74,8 @@ Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->na
 Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])->name('avaliacao.destroy');
 
 
-//
-// ESCOLA
-//
+//Rota para escola
+
 Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
 
 Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
@@ -92,9 +91,11 @@ Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('esc
 Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
 
 
-//Rota para Usuarios
+//Rota para usuarios
 
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios.index');
+
+Route::get('/perfil', [UsuariosController::class, 'perfil'])->name('usuarios.perfil');
 
 Route::get('/usuarios/novo', [UsuariosController::class, 'create'])->name('usuarios.create');
 
