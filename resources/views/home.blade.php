@@ -17,6 +17,8 @@
             <h4>{{ $cardapio->valor_calorico }}</h4>
             <h3>{{ $cardapio->id_escolas }}</h3>
 
+            <h3>{{ $cardapio->nota }}</h3>
+
             <div class="nota-scale">
                 <form method="POST" action="{{  route('avaliacao.store') }}">
                     <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}">
