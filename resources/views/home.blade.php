@@ -33,12 +33,12 @@
                         <label>Nota:</label>
                         <input type="range" min="0" max="5" value="0" class="slider" id="myRange" name="nota">
                         <div class="nota-scale">
-                            <p>0</p>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                            <p>4</p>
-                            <p>5</p>
+                            <p>⭐</p>
+                            <p>⭐</p>
+                            <p>⭐</p>
+                            <p>⭐</p>
+                            <p>⭐</p>
+                            <p>⭐</p>
                         </div>
                     </div>
 
@@ -49,10 +49,10 @@
 
             @foreach($cardapio->avaliacoes as $avaliacao)
             <h6>{{ $avaliacao->usuario->nome }}:
-                {{ $avaliacao->comentario }} <br> </h6>
+                {{ $avaliacao->comentario }}
+                ⭐ {{ $avaliacao->nota }}<br> </h6>
             @endforeach
         </div>
         @endforeach
 @endsection
 
- 

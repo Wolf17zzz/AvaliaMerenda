@@ -1,0 +1,28 @@
+@import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: center;
+  }
+
+  .rating input {
+    display: none;
+  }
+
+  .rating label {
+    display: inline-block;
+    padding: 5px;
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+  }
+
+  .rating label:before {
+    content: "\2605";
+  }
+
+  .rating input:checked ~ label {
+    color: orange;
+  }

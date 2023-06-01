@@ -11,7 +11,8 @@ export default defineConfig({
                 'resources/sass/cadastro.scss',
                 'resources/sass/navigation.scss',
                 'resources/sass/home.scss',
-                'resources/sass/cardapio.scss'     
+                'resources/sass/cardapio.scss',
+                'resources/sass/estrelas.scss'
             ],
             refresh: true,
         }),
