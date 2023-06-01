@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Escola;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
@@ -76,6 +77,12 @@ class UsuariosController extends Controller
         return redirect()->route('usuarios.index');
     }
 
+    public function perfil()
+    {
+        $usuario = Auth::user();
+
+        return view('perfil.perfil', compact('usuario'));
+    }
 
 
 }

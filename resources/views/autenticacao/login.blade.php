@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>Login</title>
+        <title>Avalia Merenda</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,10 +8,11 @@
     </head>
     <body>
     <div class="page">
+    <h1>Avalia Merenda</h1>
         <form method="POST" action="{{ route('autenticacao.store') }}" class="formLogin">
             @csrf
-
-            <div class="tituloLogin">
+        
+            <div class="tituloLogin text-center">
             <h1>Login</h1>
             </div>
             <p>Digite os seus dados de acesso nos campos abaixo.</p>

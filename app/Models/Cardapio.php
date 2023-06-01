@@ -25,4 +25,12 @@ class Cardapio extends Model
     {
         return $this->hasMany(Avaliacao::class);
     }
+
+    public function getNotaAttribute()
+    {
+        if (empty($this->avaliacoes))
+            return 0;
+
+        return number_format($this->avaliacoes->avg('nota'), 1);
+    }
 }

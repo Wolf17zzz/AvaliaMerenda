@@ -4,7 +4,9 @@
 
 @vite(['resources/sass/home.scss'])
 
-
+    <h1 class="text-center display-1">
+        {{ Auth::user()->escola->nome }}
+    </h1>
 
     @foreach($cardapios as $cardapio)
         <div class="cardapio-container">
@@ -14,6 +16,8 @@
             <h4>{{ $cardapio->bebida }}</h4>
             <h4>{{ $cardapio->valor_calorico }}</h4>
             <h3>{{ $cardapio->id_escolas }}</h3>
+
+            <h3>{{ $cardapio->nota }}</h3>
 
             <div class="nota-scale">
                 <form method="POST" action="{{  route('avaliacao.store') }}">
