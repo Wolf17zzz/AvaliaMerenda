@@ -42,17 +42,21 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Publicar comentário</button>
+                    <button type="submit" class="btn btn-primary">Publicar avaliação</button>
                 </form>
             </div>
+            
 
 
             @foreach($cardapio->avaliacoes as $avaliacao)
-            <h6>{{ $avaliacao->usuario->nome }}:
+            <div class="comment-container">
+          <h6>{{ $avaliacao->usuario->nome }}:
                 {{ $avaliacao->comentario }}
                 ⭐ {{ $avaliacao->nota }}<br> </h6>
+            </div>
             @endforeach
-        </div>
+            </div>
         @endforeach
+        
 @endsection
 

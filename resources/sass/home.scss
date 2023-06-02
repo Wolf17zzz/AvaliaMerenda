@@ -7,16 +7,17 @@
   align-items: center;
   align-content: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   height: 100vh;
-  background-color: #480ca8;
 }
 
 .cardapio-container {
     margin: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding-bottom: 1%;
+    border: 1px solid #000000;
+    border-radius: 3px;
+
   
     .cardapio-header {
       font-size: 24px;
@@ -44,32 +45,27 @@
       font-size: 16px;
       font-weight: bold;
     }
-
-    
-  
+ 
     .btn-primary {
-            background-color: #f72585;
-            color: #fff;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;      
+      background-color: #f72585;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;      
     }
 
     .nota-container {
-        label {
-          font-weight: bold;
-        }
-      
+        
         input[type="range"].slider {
           width: 100%;
         }
       
-        .nota-scale {
-          display: flex;
-          justify-content: space-between;
-          margin-top: 5px;
-          font-size: 14px;
-          font-weight: bold;
+    .nota-scale {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      font-size: 14px;
+      font-weight: bold;
       
           p {
             margin: 0;
@@ -78,4 +74,11 @@
       }
       
   }
+
+  .comment-container {
+    text-align: right;
+    position: relative;
+    top: -300px;
+  
+}
   
