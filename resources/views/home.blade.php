@@ -3,6 +3,7 @@
 @section('content')
 
 @vite(['resources/sass/home.scss'])
+@vite(['resources/sass/estrelas.scss'])
 
     <h1 class="text-center display-1">
         {{ Auth::user()->escola->nome }}
@@ -32,14 +33,17 @@
 
                             <div class="nota-container nota-scale">
                                 <label>Nota:</label>
-                                <input type="range" min="0" max="5" value="0" class="slider" id="myRange" name="nota">
-                                <div class="nota-scale">
-                                    <p>⭐</p>
-                                    <p>⭐</p>
-                                    <p>⭐</p>
-                                    <p>⭐</p>
-                                    <p>⭐</p>
-                                    <p>⭐</p>
+                                <div type="range" min="1" max="5" value="0" class="rating">
+                                    <input type="radio" id="star1" name="nota" value="5">
+                                    <label for="star1"></label>
+                                    <input type="radio" id="star2" name="nota" value="4">
+                                    <label for="star2"></label>
+                                    <input type="radio" id="star3" name="nota" value="3">
+                                    <label for="star3"></label>
+                                    <input type="radio" id="star4" name="nota" value="2">
+                                    <label for="star4"></label>
+                                    <input type="radio" id="star5" name="nota" value="1">
+                                    <label for="star5"></label>
                                 </div>
                             </div>
 
@@ -56,12 +60,12 @@
                     <div class="comentarios border rounded p-3">
                         <div class="comment-container">
                             <h1 class="mb-3">Comentários</h1>
-    
+
                             <div class="comentarios-feitos">
                                 @foreach($cardapio->avaliacoes as $avaliacao)
                                     <div>
                                         <h6>{{ $avaliacao->usuario->nome }}</h6>
-    
+
                                         <p>
                                             {{ $avaliacao->comentario }}
                                         </p>
@@ -74,6 +78,6 @@
             </div>
         </div>
     @endforeach
-        
+
 @endsection
 
