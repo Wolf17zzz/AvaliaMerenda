@@ -36,15 +36,6 @@
     .label {
       font-weight: bold;
     }
-  
-    .nota-scale {
-      display: flex;
-      justify-content: space-between;
-      border: 20px;
-      margin-top: 5px;
-      font-size: 16px;
-      font-weight: bold;
-    }
  
     .btn-primary {
       background-color: #f72585;
@@ -73,12 +64,10 @@
         }
       }
       
-  }
 
-  .comment-container {
-    text-align: right;
-    position: relative;
-    top: -300px;
-  
-}
+      .comentarios-feitos{
+        max-height: 28rem;
+        overflow-y: scroll;
+      }
+  }
   
