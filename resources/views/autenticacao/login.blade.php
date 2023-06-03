@@ -8,13 +8,13 @@
     </head>
     <body>
     <div class="page">
-    <h1>Avalia Merenda</h1>
         <form method="POST" action="{{ route('autenticacao.store') }}" class="formLogin">
             @csrf
         
             <div class="tituloLogin text-center">
-            <h1>Login</h1>
+            <h1>Avalia Merenda</h1>
             </div>
+            <h3 class="login">Login</h3>
             <p>Digite os seus dados de acesso nos campos abaixo.</p>
             <label for="email">E-mail</label>
             <input type="email" name="email" placeholder="Digite seu e-mail" autofocus="true" />
