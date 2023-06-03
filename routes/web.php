@@ -7,6 +7,7 @@ use App\Http\Controllers\CardapiosController;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\EscolasController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\SenhaController;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AutenticacaoController;
@@ -108,3 +109,11 @@ Route::post('/usuarios', [UsuariosController::class, 'store'])->name('usuarios.s
 Route::put('/usuarios/{usuario}', [UsuariosController::class, 'update'])->name('usuarios.update');
 
 Route::delete('/usuarios/{usuario}', [UsuariosController::class, 'destroy'])->name('usuarios.destroy');
+
+
+//SENHA
+
+Route::get('/senha', [SenhaController::class, 'index'])->name('senha.index');
+Route::post('/senha', [SenhaController::class, 'submit'])->name('senha.show');
+Route::get('senha/{senha}', [SenhaController::class, 'edit'])->name('senha.edit');
+Route::post('senha/mudar', [SenhaController::class, 'update'])->name('senha.update');
