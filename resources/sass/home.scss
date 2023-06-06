@@ -42,7 +42,7 @@
       color: #fff;
       font-size: 14px;
       font-weight: 600;
-      cursor: pointer;      
+      cursor: pointer;  
     }
 
     .nota-container {
@@ -64,10 +64,26 @@
         }
       }
       
-
-      .comentarios-feitos{
-        max-height: 28rem;
-        overflow-y: scroll;
+    .comentarios-feitos {
+      max-height: 28rem;
+      overflow-y: scroll;
       }
+
+    .campo-comentario {
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #6f6f6f;
+      border-radius: 4px;
+      resize: vertical;
+      }
+    }
+      
   }
   

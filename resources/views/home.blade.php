@@ -20,17 +20,14 @@
                         <h4>{{ $cardapio->bebida }}</h4>
                         <h4>{{ $cardapio->valor_calorico }}</h4>
                     </div>
-
-                    <div class="border p-3 rounded mt-4">
+                    <div class=" rounded mt-4">
                         <form method="POST" action="{{  route('avaliacao.store') }}">
                             @csrf
                             <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}">
-
-                            <div class="form-group">
+                            <div class="campo-comentario">
                                 <label for="avaliacao">Comentário:</label>
                                 <textarea class="form-control" id="avaliacao" name="comentario"></textarea>
                             </div>
-
                             <div class="nota-container nota-scale">
                                 <label>Nota:</label>
                                 <div type="range" min="1" max="5" value="0" class="rating">
@@ -46,30 +43,27 @@
                                     <label for="star5"></label>
                                 </div>
                             </div>
-
                             <div class="d-flex justify-content-end mt-3">
                                 <button type="submit" class="btn btn-primary">Publicar avaliação</button>
                             </div>
                         </form>
                     </div>
                 </div>
-
                 <div class="w-50">
-                    <div class="p-4 my-2 display-3 border rounded text-center">Nota Geral {{ $cardapio->nota }}</div>
-
+                    <div class="p-4 my-2 display-3 text-center">Nota Geral {{ $cardapio->nota }}</div>
                     <div class="comentarios border rounded p-3">
                         <div class="comment-container">
                             <h1 class="mb-3">Comentários</h1>
-
+                            <hr>
                             <div class="comentarios-feitos">
                                 @foreach($cardapio->avaliacoes as $avaliacao)
                                     <div>
-                                        <h6>{{ $avaliacao->usuario->nome }}</h6>
-
-                                        <p>
-                                            {{ $avaliacao->comentario }}
-                                        </p>
+                                        <h6>
+                                            {{ $avaliacao->usuario->nome }}:                                        
+                                            <p>{{ $avaliacao->comentario }}</p>
+                                        </h6>                                                
                                     </div>
+                                    <hr>
                                 @endforeach
                             </div>
                         </div>
@@ -80,4 +74,7 @@
     @endforeach
 
 @endsection
+
+
+
 
