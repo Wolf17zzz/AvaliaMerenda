@@ -1,6 +1,11 @@
-@extends('layout')
+<html lang="en">
+    <head>
+        <title>Avalia Merenda</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
+        @vite(['resources/sass/login.scss'])
+    </head>
 <main class="login-form">
   <div class="cotainer">
       <div class="row justify-content-center">
@@ -39,4 +44,4 @@
       </div>
   </div>
 </main>
-@endsection
+
