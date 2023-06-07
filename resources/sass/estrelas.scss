@@ -26,3 +26,9 @@
   .rating input:checked ~ label {
     color: orange;
   }
+
+  .rating label:hover,
+  .rating label:hover ~ label {
+    color: #ffbf00;
+  }
+
