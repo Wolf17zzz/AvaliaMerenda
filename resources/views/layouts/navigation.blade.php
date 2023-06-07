@@ -12,9 +12,9 @@
         <a class="nav-link custom-link" href="{{ route('inicio') }}"><i class="fas fa-home"></i> Início</a>
       </li>
     </ul>
-    <div class="content-text-center">
-      <h3 class="nome-pagina custom-heading">Avalia Merenda</h3>
-    </div>
+  <div class="content-text-center">
+    <h3 class="nome-pagina custom-heading">Avalia Merenda</h3>
+  </div>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" href="{{ route('usuarios.perfil') }}"><i class="fas fa-user"></i> Usuário</a>

@@ -36,7 +36,8 @@ class EscolasController extends Controller
         // Preenche os campos do objeto com os dados da requisição
         $escola->nome = $requisicao->nome;
         $escola->endereco = $requisicao->endereco;
-        $escola->cnpj = $requisicao->cnpj;
+        $escola->telefone = $requisicao->telefone;
+        $escola->email = $requisicao->email;
 
         // Salva o objeto no banco de dados
         $escola->save();
@@ -84,4 +85,6 @@ class EscolasController extends Controller
 
         return redirect()->route('escolas.index');
     }
+
 }
+

@@ -13,7 +13,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('endereco');
-            $table->string('cnpj');
+            $table->string('telefone', 14);
+            $table->string('email');
          
             $table->timestamps();
         });

@@ -18,12 +18,18 @@
                 <h2 class="label">Escola: {{ $usuario->escola->nome }}</h2>
             </div>
             <div class="button-container">
-                <button class="secondary">Sair</button>
+                <button id="btnIrParaLogin" class="secondary">Sair</button>
             </div>
         </div>
     </body>
 </html>
 
+
+<script>
+    document.getElementById('btnIrParaLogin').addEventListener('click', function() {
+    window.location.href = "entrar";
+});
+</script>
 
 <style>
             .button-container {
@@ -46,6 +52,7 @@
                 background-color: #6c757d;
                 color: #fff;
             }
+
         </style> 
 
 @endsection

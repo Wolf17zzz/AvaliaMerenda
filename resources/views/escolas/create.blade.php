@@ -34,8 +34,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label>CNPJ</label>
-                        <input type="number" name="cnpj" class="form-control">
+                        <label>telefone</label>
+                        <input type="number" name="telefone" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>email</label>
+                        <input type="text" name="email" class="form-control">
                     </div>
 
                     <div>
