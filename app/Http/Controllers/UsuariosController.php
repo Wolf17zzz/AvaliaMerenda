@@ -32,6 +32,7 @@ class UsuariosController extends Controller
             'nome' => 'required|string',
             'cpf' => 'required|string',
             'email' => 'required|string',
+            'telefone' => 'required|string',
             'senha' => 'required|string|confirmed',
             'escola_id' => 'required|exists:escolas,id'
         ]);
@@ -41,6 +42,7 @@ class UsuariosController extends Controller
         $usuario->nome = $requisicao->nome;
         $usuario->cpf = $requisicao->cpf;
         $usuario->email = $requisicao->email;
+        $usuario->telefone = $requisicao->telefone;
         $usuario->senha = Hash::make($requisicao->senha);
         $usuario->escola_id = $requisicao->escola_id;
 
