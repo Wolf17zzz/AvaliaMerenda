@@ -20,6 +20,9 @@
             <div class="button-container">
                 <button id="btnIrParaLogin" class="secondary">Sair</button>
             </div>
+            @foreach($usuario->avaliacoes as $avaliacao)
+            <h3>{{ $usuario->comentario->avaliacoes }}</h3>
+            @endforeach
         </div>
     </body>
 </html>
