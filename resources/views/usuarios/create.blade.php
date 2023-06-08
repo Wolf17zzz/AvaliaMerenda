@@ -49,6 +49,15 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                        <label for="inputEmail">Telefone:</label>
+                        <input type="number" name="telefone" value="{{ old('telefone') }}" class="form-control" id="inputTelefone" placeholder="(00) 0000-0000">
+
+                        @error('telefone')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
                     <div class="form-group">
                         <label for="inputSenha">Senha:</label>
                         <input type="password" name="senha" value="{{ old('senha') }}" class="form-control" id="inputSenha" placeholder="Digite sua senha">

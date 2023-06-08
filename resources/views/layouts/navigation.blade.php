@@ -6,16 +6,16 @@
 
 <nav class="navbar navbar-expand navbar-dark custom-navbar">
 
-  <div class="collapse navbar-collapse">
+  <div class="collapse navbar-collapse justify-content-between">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link custom-link" href="{{ route('inicio') }}"><i class="fas fa-home"></i> Início</a>
       </li>
     </ul>
   <div class="content-text-center">
-    <h3 class="nome-pagina custom-heading">Avalia Merenda</h3>
+    <h3 class="nome-pagina custom-heading" >Avalia Merenda</h3>
   </div>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="{{ route('usuarios.perfil') }}"><i class="fas fa-user"></i> Usuário</a>
       </li>

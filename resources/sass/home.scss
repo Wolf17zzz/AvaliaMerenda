@@ -22,52 +22,53 @@
     border: 1px solid #000000;
     border-radius: 3px;
 
-  
+
+
     .cardapio-header {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
     }
-  
+
     .cardapio-item {
       margin-bottom: 5px;
     }
-  
+
     .form-group {
       margin-bottom: 15px;
     }
-  
+
     .label {
       font-weight: bold;
     }
- 
+
     .btn-primary {
       background-color: #f72585;
       color: #fff;
       font-size: 14px;
       font-weight: 600;
-      cursor: pointer;  
+      cursor: pointer;
     }
 
     .nota-container {
-        
+
         input[type="range"].slider {
           width: 100%;
         }
-      
+
     .nota-scale {
       display: flex;
       justify-content: space-between;
       margin-top: 5px;
       font-size: 14px;
       font-weight: bold;
-      
+
           p {
             margin: 0;
           }
         }
       }
-      
+
     .comentarios-feitos {
       max-height: 28rem;
       overflow-y: scroll;
@@ -79,7 +80,7 @@
         margin-bottom: 10px;
         font-weight: bold;
       }
-      
+
     .form-control {
       width: 100%;
       padding: 10px;
@@ -88,7 +89,6 @@
       resize: vertical;
       }
     }
-      
-  
+
+
   }
-  

@@ -15,10 +15,10 @@
                 <div class="cardapio w-50 d-flex flex-column justify-content-around">
                     <div class="dados">
                         <h1 class="display-3" style="font-size: 50px;">{{ $cardapio->dia_semana }}</h1>
-                        <h4>{{ $cardapio->refeicao_principal }}</h4>
-                        <h4>{{ $cardapio->sobremesa }}</h4>
-                        <h4>{{ $cardapio->bebida }}</h4>
-                        <h4>{{ $cardapio->valor_calorico }}</h4>
+                        <h4>Refeição principal: {{ $cardapio->refeicao_principal }}</h4>
+                        <h4>Fruta: {{ $cardapio->sobremesa }}</h4>
+                        <h4>Bebida: {{ $cardapio->bebida }}</h4>
+                        <h4>Valor calórico: {{ $cardapio->valor_calorico }}</h4>
                     </div>
                     <div class=" rounded mt-4">
                         <form method="POST" action="{{  route('avaliacao.store') }}">

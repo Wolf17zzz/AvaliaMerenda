@@ -4,7 +4,7 @@
 .rating {
     direction: rtl;
     unicode-bidi: bidi-override;
-    text-align: center;
+    text-align: left;
   }
 
   .rating input {
@@ -26,3 +26,10 @@
   .rating input:checked ~ label {
     color: orange;
   }
+
+  .rating label:hover,
+  .rating label:hover ~ label {
+    color: #ffbf00;
+  }
+
+
