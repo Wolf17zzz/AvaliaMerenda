@@ -30,4 +30,9 @@ class Usuario extends Authenticatable
     {
         return $this->belongsTo(Escola::class, 'escola_id');
     }
+
+    public function avaliacoes()
+    {
+        return $this->hasMany(Avaliacao::class);
+    }
 }
