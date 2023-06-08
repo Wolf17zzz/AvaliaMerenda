@@ -114,6 +114,7 @@ Route::delete('/usuarios/{usuario}', [UsuariosController::class, 'destroy'])->na
 //SENHA
 
 Route::get('/senha', [SenhaController::class, 'index'])->name('senha.index');
-Route::post('/senha', [SenhaController::class, 'submit'])->name('senha.show');
+Route::post('/senha', [SenhaController::class, 'store'])->name('senha.store');
 Route::get('senha/{senha}', [SenhaController::class, 'edit'])->name('senha.edit');
 Route::post('senha/mudar', [SenhaController::class, 'update'])->name('senha.update');
+Route::get('senha/mudar/{token}', [SenhaController::class, 'show'])->name('senha.show');
