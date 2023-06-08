@@ -1,18 +1,24 @@
 <html lang="en">
-    <head>
-        <title>Avalia Merenda</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        @vite(['resources/sass/login.scss'])
-    </head>
-    <body>
+<head>
+    <title>Avalia Merenda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @vite(['resources/sass/login.scss'])
+</head>
+
+<body>
     <div class="page">
         <form method="POST" action="{{ route('autenticacao.store') }}" class="formLogin">
             @csrf
 
+            @isset($_GET['message'])
+                {{ $_GET['message'] }}
+            @endisset
+
             <div class="tituloLogin text-center">
-            <h1>Avalia Merenda</h1>
+                <h1>Avalia Merenda</h1>
             </div>
             <h3 class="login">Login</h3>
             <p>Digite os seus dados de acesso nos campos abaixo.</p>
@@ -35,5 +41,6 @@
 
         </form>
     </div>
-    </body>
+</body>
+
 </html>
