@@ -35,41 +35,5 @@
                 <input type="submit" value="Excluir Cardapio" class="btn btn-danger">
             </form>
 
-            <div class="my-3 p-3 border rounded">
-                <h1>Nova avaliação</h1>
-
-                <form method="POST" action="{{ route('avaliacao.store', $cardapio->id) }}">
-                    @csrf
-
-                    <div class="mb-3">
-                        <label>Comentário:</label>
-                        <textarea name="comentario" id="" rows="5" class="form-control"></textarea>
-                    </div>
-
-                    <div>
-                        <input type="submit" value="Comentar" class="btn btn-primary">
-                    </div>
-                </form>
-            </div>
-
-            <table class="table table-hover table-bordered table-primary">
-                <tr class="table-dark">
-                    <th>Comentários:</th>
-                </tr>
-
-                @foreach ($cardapio->avaliacoes as $avaliacao)
-                    <tr>
-                        <td>{{ $avaliacao->comentario}}</td>
-                        <td>
-                            <a class="link" href="{{ route('avaliacao.show', $avaliacao->id) }}">
-                                Ver
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
-        </div>
-
-
     </body>
 </html>
