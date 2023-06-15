@@ -9,7 +9,7 @@
         {{ Auth::user()->escola->nome }}
     </h1>
 
-    @foreach($cardapios as $cardapio)
+    @foreach($cardapios as $index => $cardapio)
         <div class="cardapio-container font-bold">
             <div class="d-flex gap-3 flex-row justify-content-between">
                 <div class="cardapio w-50 d-flex flex-column justify-content-around">
@@ -31,16 +31,16 @@
                             <div class="nota-container nota-scale">
                                 <label>Nota:</label>
                                 <div type="range" min="1" max="5" value="0" class="rating">
-                                    <input type="radio" id="star1" name="nota" value="5">
-                                    <label for="star1"></label>
-                                    <input type="radio" id="star2" name="nota" value="4">
-                                    <label for="star2"></label>
-                                    <input type="radio" id="star3" name="nota" value="3">
-                                    <label for="star3"></label>
-                                    <input type="radio" id="star4" name="nota" value="2">
-                                    <label for="star4"></label>
-                                    <input type="radio" id="star5" name="nota" value="1">
-                                    <label for="star5"></label>
+                                    <input type="radio" id="star1_{{ $index }}" name="nota" value="5">
+                                    <label for="star1_{{ $index }}"></label>
+                                    <input type="radio" id="star2_{{ $index }}" name="nota" value="4">
+                                    <label for="star2_{{ $index }}"></label>
+                                    <input type="radio" id="star3_{{ $index }}" name="nota" value="3">
+                                    <label for="star3_{{ $index }}"></label>
+                                    <input type="radio" id="star4_{{ $index }}" name="nota" value="2">
+                                    <label for="star4_{{ $index }}"></label>
+                                    <input type="radio" id="star5_{{ $index }}" name="nota" value="1">
+                                    <label for="star5_{{ $index }}"></label>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-3">
@@ -59,9 +59,9 @@
                                 @foreach($cardapio->avaliacoes as $avaliacao)
                                     <div>
                                         <h6 style="font-size: 15px;"><p>
-                                            {{ $avaliacao->usuario->nome }}:                                        
+                                            {{ $avaliacao->usuario->nome }}:
                                             {{ $avaliacao->comentario }}
-                                        </p></h6>                                                
+                                        </p></h6>
                                     </div>
                                     <hr>
                                 @endforeach

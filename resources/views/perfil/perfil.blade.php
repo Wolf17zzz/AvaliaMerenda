@@ -1,15 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+    @vite(['resources/sass/usuario.scss'])
 
-@vite(['resources/sass/usuario.scss'])
+    <!DOCTYPE html>
+    <html>
 
-<!DOCTYPE html>
-<html>
     <head>
         <title>Perfil do Usuário</title>
-        
+
     </head>
+
     <body>
         <div class="profile-container">
             <div class="profile-info">
@@ -20,42 +21,45 @@
             <div class="button-container">
                 <button id="btnIrParaLogin" class="secondary">Sair</button>
             </div>
-            @foreach($usuario->avaliacoes as $avaliacao)
-            <h3>{{ $usuario->comentario->avaliacoes }}</h3>
+
+            @foreach ($usuario->avaliacoes as $avaliacao)
+                <div>
+                    <h3>{{ $avaliacao->comentario }}</h3>
+                    <h3>{{ $avaliacao->nota }}</h3>
+                </div>
             @endforeach
         </div>
     </body>
-</html>
+
+    </html>
 
 
-<script>
-    document.getElementById('btnIrParaLogin').addEventListener('click', function() {
-    window.location.href = "entrar";
-});
-</script>
+    <script>
+        document.getElementById('btnIrParaLogin').addEventListener('click', function() {
+            window.location.href = "entrar";
+        });
+    </script>
 
-<style>
-            .button-container {
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                margin: 20px;
-            }
+    <style>
+        .button-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
+        }
 
-            .button-container button {
-                margin: 0 5px;
-                padding: 10px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
+        .button-container button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-            .button-container button.secondary {
-                background-color: #6c757d;
-                color: #fff;
-            }
-
-        </style> 
-
+        .button-container button.secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+    </style>
 @endsection
