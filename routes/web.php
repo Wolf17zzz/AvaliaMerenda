@@ -33,21 +33,38 @@ Route::middleware('auth:usr')->group(function(){
 });
 
 Route::middleware(['auth:usr', 'admin'])->group(function(){
-    //Rota para escola
+    
+//Rota para escola
 
-    Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
+Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
 
-    Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
+Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
 
-    Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
+Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
 
-    Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
+Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
 
-    Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
+Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
 
-    Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
+Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
 
-    Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
+Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
+
+//Rota para cadastro do cardapio
+
+Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
+
+Route::get('/cardapios/novo', [CardapiosController::class, 'create'])->name('cardapios.create');
+
+Route::get('/cardapios/{cardapio}', [CardapiosController::class, 'show'])->name('cardapios.show');
+
+Route::get('/cardapios/{cardapio}/editar', [CardapiosController::class, 'edit'])->name('cardapios.edit');
+
+Route::post('/cardapios', [CardapiosController::class, 'store'])->name('cardapios.store');
+
+Route::put('/cardapios/{cardapio}', [CardapiosController::class, 'update'])->name('cardapios.update');
+
+Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])->name('cardapios.destroy');
 
 });
 

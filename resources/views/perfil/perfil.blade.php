@@ -21,13 +21,16 @@
             <div class="button-container">
                 <button id="btnIrParaLogin" class="secondary">Sair</button>
             </div>
-
-            @foreach ($usuario->avaliacoes as $avaliacao)
-                <div>
-                    <h3>{{ $avaliacao->comentario }}</h3>
-                    <h3>{{ $avaliacao->nota }}</h3>
+            <div>
+                <label>Suas Avaliações:</label>
+                <div class="comentarios border rounded p-3">
+                    @foreach ($usuario->avaliacoes as $avaliacao)
+                        <div>
+                            <p><h5>Avaliação: {{ $avaliacao->comentario }} - Nota:{{ $avaliacao->nota }}</h5></p>
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
         </div>
     </body>
 
