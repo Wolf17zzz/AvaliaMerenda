@@ -32,6 +32,25 @@ Route::middleware('auth:usr')->group(function(){
     Route::get('/', [AdminController::class, 'inicio'])->name('inicio');
 });
 
+Route::middleware(['auth:usr', 'admin'])->group(function(){
+    //Rota para escola
+
+    Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
+
+    Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
+
+    Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
+
+    Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
+
+    Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
+
+    Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
+
+    Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
+
+});
+
 //Rota para login do usuario
 
 Route::get('/entrar', [AutenticacaoController::class, 'login'])->name('login');
@@ -75,21 +94,6 @@ Route::put('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'update'])->na
 Route::delete('/avaliacao/{avaliacao}', [AvaliacaoController::class, 'destroy'])->name('avaliacao.destroy');
 
 
-//Rota para escola
-
-Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
-
-Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
-
-Route::get('/escolas/{escola}', [EscolasController::class, 'show'])->name('escolas.show');
-
-Route::get('/escolas/{escola}/editar', [EscolasController::class, 'edit'])->name('escolas.edit');
-
-Route::post('/escolas', [EscolasController::class, 'store'])->name('escolas.store');
-
-Route::put('/escolas/{escola}', [EscolasController::class, 'update'])->name('escolas.update');
-
-Route::delete('/escolas/{escola}', [EscolasController::class, 'destroy'])->name('escolas.destroy');
 
 
 //Rota para usuarios

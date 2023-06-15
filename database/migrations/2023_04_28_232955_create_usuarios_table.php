@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('telefone')->unique();
             $table->string('senha');
             $table->integer('escola_id');
-
+            $table->boolean('super_admin')->default(false);
 
             $table->timestamps();
         });
