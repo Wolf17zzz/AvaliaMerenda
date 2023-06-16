@@ -15,7 +15,9 @@
             <div class="div-superior">
                 <h1>Nome: {{ $usuario->nome }} </h1>
                 <h2 class="label">Email: {{ $usuario->email }}</h2>
-                <h2 class="label">Escola: {{ $usuario->escola->nome }}</h2>
+                @if($usuario->escola_id != null)
+                    <h2 class="label">Escola: {{ $usuario->escola->nome }}</h2>
+                @endif
             </div>
         </div>
         <div class="avaliacoes-container">

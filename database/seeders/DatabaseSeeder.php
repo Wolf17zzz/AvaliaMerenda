@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Usuario;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Usuario::create([
+            'nome' => 'Administrador',
+            'email' => 'adm@adm.com',
+            'senha' => Hash::make('senhaadm123'),
+            'cpf' => '12345678910',
+            'escola_id' => 0,
+            'super_admin' => true,
+            'telefone' => '12345678910'
+        ]);
     }
 }

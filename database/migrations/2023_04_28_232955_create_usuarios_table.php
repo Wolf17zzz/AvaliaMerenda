@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('telefone')->unique();
             $table->string('senha');
-            $table->integer('escola_id');
+            $table->integer('escola_id')->nullable();
             $table->boolean('super_admin')->default(false);
 
             $table->timestamps();
