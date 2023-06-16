@@ -26,17 +26,17 @@
                             <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}"><
                             <div class="campo-comentario">
                                 <label for="avaliacao">Comentário:</label>
-                                <textarea class="form-control" id="avaliacao" name="comentario" placeholder="Comente aqui o que você achou da Merenda!"></textarea>
+                                <textarea class="form-control" id="avaliacao_{{ $index }}" name="comentario" placeholder="Comente aqui o que você achou da Merenda!"></textarea>
                                 <div class="emoji-list">
-                                   <span class="emoji" id="emoji1_{{ $index }}" onclick="insertEmoji('😃')">😃</span>                                   
-                                   <span class="emoji" id="emoji2_{{ $index }}" onclick="insertEmoji('😋')">😋</span>                                   
-                                   <span class="emoji" id="emoji3_{{ $index }}" onclick="insertEmoji('🙃')">🙃</span>                                   
-                                   <span class="emoji" id="emoji4_{{ $index }}" onclick="insertEmoji('🤩')">🤩</span>                                  
-                                   <span class="emoji" id="emoji5_{{ $index }}" onclick="insertEmoji('🤤')">🤤</span>                                   
-                                   <span class="emoji" id="emoji6_{{ $index }}" onclick="insertEmoji('👍')">👍</span>                                   
-                                   <span class="emoji" id="emoji7_{{ $index }}" onclick="insertEmoji('👎')">👎</span>                                    
-                                   <span class="emoji" id="emoji8_{{ $index }}" onclick="insertEmoji('❤️')">❤️</span>                                    
-                                   <span class="emoji"  onclick="insertEmoji('🔥')">🔥</span>                            
+                                   <span class="emoji" id="emoji1_{{ $index }}" onclick="insertEmoji('😃', {{ $index }})">😃</span>
+                                   <span class="emoji" id="emoji2_{{ $index }}" onclick="insertEmoji('😋', {{ $index }})">😋</span>
+                                   <span class="emoji" id="emoji3_{{ $index }}" onclick="insertEmoji('🙃', {{ $index }})">🙃</span>
+                                   <span class="emoji" id="emoji4_{{ $index }}" onclick="insertEmoji('🤩', {{ $index }})">🤩</span>
+                                   <span class="emoji" id="emoji5_{{ $index }}" onclick="insertEmoji('🤤', {{ $index }})">🤤</span>
+                                   <span class="emoji" id="emoji6_{{ $index }}" onclick="insertEmoji('👍', {{ $index }})">👍</span>
+                                   <span class="emoji" id="emoji7_{{ $index }}" onclick="insertEmoji('👎', {{ $index }})">👎</span>
+                                   <span class="emoji" id="emoji8_{{ $index }}" onclick="insertEmoji('❤️', {{ $index }})">❤️</span>
+                                   <span class="emoji"  onclick="insertEmoji('🔥')">🔥</span>
                                     <!-- Adicione mais emojis aqui -->
                                 </div>
                             </div>
@@ -88,8 +88,8 @@
 @endsection
 
 <script>
-    function insertEmoji(emoji) {
-    const commentInput = document.getElementById('avaliacao');
+    function insertEmoji(emoji, index) {
+    const commentInput = document.getElementById(`avaliacao_${index}`);
     commentInput.value += emoji;
 }
 </script>
