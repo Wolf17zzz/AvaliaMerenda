@@ -23,10 +23,22 @@
                     <div class=" rounded mt-4">
                         <form method="POST" action="{{  route('avaliacao.store') }}">
                             @csrf
-                            <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}">
+                            <input type="hidden" name="cardapio_id" value="{{ $cardapio->id }}"><
                             <div class="campo-comentario">
                                 <label for="avaliacao">Comentário:</label>
-                                <textarea class="form-control" id="avaliacao" name="comentario"></textarea>
+                                <textarea class="form-control" id="avaliacao" name="comentario" placeholder="Comente aqui o que você achou da Merenda!"></textarea>
+                                <div class="emoji-list">
+                                   <span class="emoji" id="emoji1_{{ $index }}" onclick="insertEmoji('😃')">😃</span>                                   
+                                   <span class="emoji" id="emoji2_{{ $index }}" onclick="insertEmoji('😋')">😋</span>                                   
+                                   <span class="emoji" id="emoji3_{{ $index }}" onclick="insertEmoji('🙃')">🙃</span>                                   
+                                   <span class="emoji" id="emoji4_{{ $index }}" onclick="insertEmoji('🤩')">🤩</span>                                  
+                                   <span class="emoji" id="emoji5_{{ $index }}" onclick="insertEmoji('🤤')">🤤</span>                                   
+                                   <span class="emoji" id="emoji6_{{ $index }}" onclick="insertEmoji('👍')">👍</span>                                   
+                                   <span class="emoji" id="emoji7_{{ $index }}" onclick="insertEmoji('👎')">👎</span>                                    
+                                   <span class="emoji" id="emoji8_{{ $index }}" onclick="insertEmoji('❤️')">❤️</span>                                    
+                                   <span class="emoji"  onclick="insertEmoji('🔥')">🔥</span>                            
+                                    <!-- Adicione mais emojis aqui -->
+                                </div>
                             </div>
                             <div class="nota-container nota-scale">
                                 <label>Nota:</label>
@@ -75,6 +87,12 @@
 
 @endsection
 
+<script>
+    function insertEmoji(emoji) {
+    const commentInput = document.getElementById('avaliacao');
+    commentInput.value += emoji;
+}
+</script>
 
 
 

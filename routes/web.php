@@ -75,22 +75,6 @@ Route::post('/entrar',  [AutenticacaoController::class, 'store'])->name('autenti
 
 Route::get('/sair', [AutenticacaoController::class, 'logout'])->name('autenticacao.logout');
 
-//Rota para cadastro do cardapio
-
-Route::get('/cardapios', [CardapiosController::class, 'index'])->name('cardapios.index');
-
-Route::get('/cardapios/novo', [CardapiosController::class, 'create'])->name('cardapios.create');
-
-Route::get('/cardapios/{cardapio}', [CardapiosController::class, 'show'])->name('cardapios.show');
-
-Route::get('/cardapios/{cardapio}/editar', [CardapiosController::class, 'edit'])->name('cardapios.edit');
-
-Route::post('/cardapios', [CardapiosController::class, 'store'])->name('cardapios.store');
-
-Route::put('/cardapios/{cardapio}', [CardapiosController::class, 'update'])->name('cardapios.update');
-
-Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])->name('cardapios.destroy');
-
 
 //Rota para avaliação
 

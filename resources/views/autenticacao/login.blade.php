@@ -33,8 +33,6 @@
 
             <a href="/senha">Esqueci minha senha</a>
             <p>Ainda não tem uma conta? <a href="usuarios/novo">Cadastre-se</a></p>
-            <a href="escolas/novo">Cadastrar Escolas</a>
-            <a href="cardapios/novo">Cadastrar Cardapio</a>
 
             <input type="submit" value="Acessar" class="btn btn-primary" />
 
