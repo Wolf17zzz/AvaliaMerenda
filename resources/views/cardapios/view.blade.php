@@ -34,6 +34,18 @@
                 
                 <input type="submit" value="Excluir Cardapio" class="btn btn-danger">
             </form>
-
+            <div class="comentarios-feitos">
+                            @foreach ($cardapio->avaliacoes as $avaliacao)
+                                <div>
+                                    <h6 style="font-size: 15px;">
+                                        <p>
+                                            {{ $avaliacao->usuario->nome }}:
+                                            {{ $avaliacao->comentario }}
+                                        </p>
+                                    </h6>
+                                </div>
+                                <hr>
+                            @endforeach
+                        </div>
     </body>
 </html>

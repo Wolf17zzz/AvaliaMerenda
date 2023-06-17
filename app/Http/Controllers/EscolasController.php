@@ -43,7 +43,7 @@ class EscolasController extends Controller
         $escola->save();
 
         // Redireciona para a página de detalhes da escola
-        return redirect()->route('login');
+        return redirect()->route('usuarios.perfil');
     }
 
     /**
