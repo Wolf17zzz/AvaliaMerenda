@@ -6,9 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
         <title>Cardapio #{{ $cardapio->id }}</title>
+
+        @vite(['resources/sass/view.cardapio.scss'])
     </head>
-    <body>
         <div class="container">
             <h1>Dia: {{ $cardapio->dia_semana }}</h1>
 
@@ -34,15 +36,17 @@
                 
                 <input type="submit" value="Excluir Cardapio" class="btn btn-danger">
             </form>
+            <h2>Comentários:</h2>
             <div class="comentarios-feitos">
                             @foreach ($cardapio->avaliacoes as $avaliacao)
                                 <div>
-                                    <h6 style="font-size: 15px;">
+                                    <h4>
                                         <p>
                                             {{ $avaliacao->usuario->nome }}:
                                             {{ $avaliacao->comentario }}
+                                            Nota-{{ $avaliacao->nota }}
                                         </p>
-                                    </h6>
+                                    </h4>
                                 </div>
                                 <hr>
                             @endforeach

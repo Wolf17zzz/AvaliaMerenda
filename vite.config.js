@@ -14,7 +14,8 @@ export default defineConfig({
                 'resources/sass/cardapio.scss',
                 'resources/sass/estrelas.scss',
                 'resources/sass/usuario.scss',
-                'resources/sass/view.cardapio.scss'
+                'resources/sass/view.cardapio.scss',
+                'resources/sass/index.cardapio.scss'
             ],
             refresh: true,
         }),
