@@ -34,7 +34,7 @@ Route::middleware('auth:usr')->group(function(){
 
 Route::middleware(['auth:usr', 'admin'])->group(function(){
     
-//Rota para escola
+});
 
 Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
 
@@ -66,7 +66,6 @@ Route::put('/cardapios/{cardapio}', [CardapiosController::class, 'update'])->nam
 
 Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])->name('cardapios.destroy');
 
-});
 
 //Rota para login do usuario
 

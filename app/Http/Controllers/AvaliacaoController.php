@@ -32,7 +32,7 @@ class AvaliacaoController extends Controller
         $requisicao->validate([
             'comentario' => 'required|string',
             'cardapio_id' => 'required',
-            'avaliacao' => 'required'
+            
         ]);
 
         $avaliacao = new Avaliacao();
