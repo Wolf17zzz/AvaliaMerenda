@@ -44,7 +44,6 @@
                                         onclick="insertEmoji('👎', {{ $index }})">👎</span>
                                     <span class="emoji" id="emoji8_{{ $index }}"
                                         onclick="insertEmoji('❤️', {{ $index }})">❤️</span>
-                                    <span class="emoji" onclick="insertEmoji('🔥')">🔥</span>
                                     <!-- Adicione mais emojis aqui -->
                                 </div>
                     </div>

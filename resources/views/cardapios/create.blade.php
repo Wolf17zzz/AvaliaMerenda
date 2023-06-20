@@ -84,8 +84,6 @@
 
                     <div>
                         <input type="submit" name="Salvar Cardapio" class="btn btn-primary">
-                    
-                    <a href=""><button class="btn btn-primary">Cardapios Salvos</button></a>
                     </div>
                 </form>
             </div>

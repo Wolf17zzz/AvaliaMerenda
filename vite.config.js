@@ -15,7 +15,8 @@ export default defineConfig({
                 'resources/sass/estrelas.scss',
                 'resources/sass/usuario.scss',
                 'resources/sass/view.cardapio.scss',
-                'resources/sass/index.cardapio.scss'
+                'resources/sass/index.cardapio.scss',
+                'resources/sass/senha.scss'
             ],
             refresh: true,
         }),

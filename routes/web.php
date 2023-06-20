@@ -33,10 +33,10 @@ Route::middleware('auth:usr')->group(function(){
 });
 
 Route::middleware(['auth:usr', 'admin'])->group(function(){
-    
-});
 
 Route::get('/escolas', [EscolasController::class, 'index'])->name('escolas.index');
+
+//Rota para cadastro da escola
 
 Route::get('/escolas/novo', [EscolasController::class, 'create'])->name('escolas.create');
 
@@ -60,12 +60,12 @@ Route::get('/cardapios/{cardapio}', [CardapiosController::class, 'show'])->name(
 
 Route::get('/cardapios/{cardapio}/editar', [CardapiosController::class, 'edit'])->name('cardapios.edit');
 
-Route::post('/cardapios', [CardapiosController::class, 'store'])->name('cardapios.store');
+Route::post('/cardapios/view', [CardapiosController::class, 'store'])->name('cardapios.store');
 
 Route::put('/cardapios/{cardapio}', [CardapiosController::class, 'update'])->name('cardapios.update');
 
 Route::delete('/cardapios/{cardapio}', [CardapiosController::class, 'destroy'])->name('cardapios.destroy');
-
+});
 
 //Rota para login do usuario
 
